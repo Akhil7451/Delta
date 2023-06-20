@@ -1,0 +1,7 @@
+
+    Ques 1 -> Write the hexcode equivalent to rgb(255, 255, 255) and tell what color is it.
+    Ans -> #ffffff OR #fff
+
+    Ques 2 -> Write the best possible rgb and the hexcode for following colors.
+    Ans -> rgb(255, 255, 0) = #ffff00 = #ff0
+            rgb(0, 0, 255)  = #0000ff = #00f

@@ -1,0 +1,122 @@
+/* 
+    To link these both documents use this in html file.
+
+        <head>
+            <link rel="stylesheet" href="style.css">
+        </head>
+
+        Color System -> 
+            i   -   Named color ->  Each browser recognizes around 140-150 color names.
+                            color: red;
+
+            ii  -   RGB ->  Red Green Blue(0-255) 
+                            rgb(255, 0, 0)  -> red
+                            rgb(0, 0, 0)    -> black
+                            rgb(0, 255, 0)  -> green
+                            rgb(0, 0, 255)  -> blue
+                            rgb(255, 255, 0)-> yellow
+                            rgb(255, 255, 255)  -> white
+
+            iii -   Hexadacimal or Hex  ->  In this we can use 16 characters (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F)(this is 1-16)
+                        #ffffff(in this first two represent red next represent blue last two are green)
+                        #000000     ->  black
+                        #0000ff     ->  blue
+                        #ffff00     ->  yellow
+                        #ffffff     ->  white
+
+    Properties ->   
+        i   -   Color Property ->   Used to set the color of foreground color value of text and text decorations.
+                    color : purple;
+                    color : #ffffff;
+
+        ii  -   Background Color Property -> Used to set the color of background.
+                    background-color: black;
+
+        iii -   Text Properties -> these properties are as foolows ->
+                i   -   text-align      ->  text is aligned to left/right/center
+                                    text-align: left/start;
+                                    text-align: right/end;
+                                    text-align: center;
+                                    text-align: justify;
+
+                ii  -   font-weight     ->  font is how much light or dark
+                                    font-weight: normal //400
+                                    font-weight: bold   //700
+                                    font-weight: 100    //100-900
+                                    font-weight: bolder
+                                    font-weight: lighter
+
+                iii -   text-decoration ->  sets the appearance of decorative lines on text like underline.
+                                    text-decoration: underline;
+                                    text-decoration: line-through;
+                                    text-decoration: overline;
+                                    text-decoration: none;
+                                            we can also change color, shape of these lines(underline, overline, linethrough)
+                                    text-decoration:wavey dotted red underline;
+
+                iv  -   line-height     -> controls the height of the line of text.
+                                    line-height: normal;
+                                    line-height: 2.5;
+
+                v   -   letter-spacing  -> controls the horizontal behaviour between text characters(space between characters.).
+                                    letter-spacing: normal;
+                                    letter-spacing: 10px;
+
+                vi  -   font size   -> controls the seize of font.
+                                            absolute units are those which doesn't change what the condition is. Relative can change according to width.
+                                    Absolut             Relative
+                                       px                   %
+                                       pt                   em
+                                       pc                   rem
+                                       cm                   ch
+                                       mm                   vh
+                                       in                   vw + many more
+                                    
+                        i   -   Pixels(px)  ->  most commonly used absolute unit.
+                                                96px    =   1inch
+                                                not suitable for responsive websites
+                                                font-size: 50px;
+
+                v   -   font family -> specifies a prioritized list of one or more font family names.
+                                        We can prepare a list of font family in case browser doesn't support one than it will use another.
+                                    font-family: arial;
+                                    font-family: avant garde, didot, sans-serif;
+*/
+
+
+/* h1{
+    color: red;
+    background-color: black;
+}
+
+p{
+    color: gold;
+    background-color: black;
+}
+
+button{
+    color: brown;
+    background-color: yellow;
+} */
+
+/* Properties. */
+
+h2{
+    text-align: start;
+    font-weight: bolder;
+    text-decoration:double underline;
+    letter-spacing: 5px;
+    font-family: Impact;
+}
+
+h3{
+    font-weight: 100;
+}
+
+p{
+    text-align: center;
+    text-decoration: underline;
+    background-color: #0ff;
+    line-height: 2.5;
+    font-size: 15px;
+}

@@ -1,0 +1,99 @@
+<!--
+    CSS ->  Cascading Style Sheets 
+            It is language that is used to describe the style of a document.
+        Basic Format of CSS ->
+            selector    ->  selector is in which you want to give any style.
+                        in this selector is h1, property is color, value is red
+                        in this all h1 headings becomes red.
+                        h1{
+                            color: red;
+                        }
+        How to include styles ?
+            i   -   Inline Style    ->  Writing style directly inline on each element.In this type style is only added to that particular tag in which we added style.
+                        <h1 style="color: red">Apna College</h1>
+            ii  -   Using<style> tag    ->  Style is added using the <style> element in tha same document. In this type we give style to a particular selector inside a <head> tag,
+                                            so all the selectors in that document will get that style.
+                        <style>
+                            h1{
+                                color: red;
+                            }
+            iii -   External Stylesheet ->  Writing CSS in a separate document & linking it with HTML file. To link these both file -
+                        <head>
+                            <link rel="stylesheet" href="style.css">
+                        </head>
+                            
+-->
+
+<!-- Inline Style
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Basics</title>
+</head>
+<body>
+    <div>
+        <h1 style="color: red;">Apna College</h1>
+        <p style="color: blue;">This is a paragraph.</p>
+        <button style="background-color: chocolate; color: blue;">Submit</button>
+    </div>
+</body>
+</html> -->
+
+<!-- Using <style> tag 
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSS Basics</title>
+        <style>
+            h1{
+                color: red;
+                background-color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1>Apna College</h1>
+            <h1>Akhil Kumar</h1>
+            <p>This is a paragraph.</p>
+            <button>Submit</button>
+        </div>
+    </body>
+    </html>
+-->
+
+<!-- External Stylesheet -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Basics</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- <div>
+        <h1>Apna College</h1>
+        <h1>Akhil Kumar</h1>
+        <p>This is paragraph 1.</p>
+        <p>This is paragraph 2.</p>
+        <button>Button 1</button>
+        <button>Button 2</button>
+    </div> -->
+
+    <!-- Proprtirs. -->
+    <div>
+        <h2>Iron Man</h2>
+        <p>Iron Man is a superhero appearing in American comic books published by Marvel Comics. Co-created by writer and editor Stan Lee, developed by scripter Larry Lieber, and designed by artists Don Heck and Jack Kirby, the character first appeared in Tales of Suspense #39 (cover dated March 1963), and received his own title in Iron Man #1 (May 1968). In 1963, the character founded the Avengers superhero team with Thor, Ant-Man, Wasp and the Hulk.</p>
+        <h2>Publication history</h2>
+        <h3>Premiere</h3>
+        <p>Iron Man's Marvel Comics premiere in Tales of Suspense #39 (cover dated March 1963) was a collaboration among editor and story-plotter Stan Lee, scripter Larry Lieber, story-artist Don Heck, and cover-artist and character-designer Jack Kirby.[2] In 1963, Lee had been toying with the idea of a businessman superhero.[3] He wanted to create the "quintessential capitalist", a character that would go against the spirit of the times and Marvel's readership.[4] </p>
+    </div>
+</body>
+</html>

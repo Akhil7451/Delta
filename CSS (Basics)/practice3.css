@@ -1,0 +1,16 @@
+/*
+    Text Transform  ->  To make text to uppercase/lowercase
+                    text-transform: uppercase;
+ */
+
+h1{
+    font-family: league spartan;
+    color: #ffa511;
+    text-align: center;
+    font-size: 55px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    line-height: 1.5;
+    text-decoration: teal double underline;
+    text-transform: uppercase;
+}

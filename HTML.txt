@@ -1,0 +1,12 @@
+-> What is HTML ? 
+	HyperText Markup Language.
+	Used to add a structure to a website for browser.
+
+-> HTML Elements -> are Standard Elements that browser recognizes :
+	Paragraph(<p>This is paragraph</p>)
+	Heading(<h>This is Heading</h>)
+	Image
+
+	The component used to design the structure of 	websites are called HTML tags.
+
+Use Ctrl + R for refresh

@@ -1,0 +1,14 @@
+-> What is Internet?
+	Interconnected network of computers around the world.
+-> Servers - Which fulfill the requirement or transfer the data to clients.
+-> Client - Computer which request the data or information from other device.
+
+	Client --> IPS(Internet Service Provider) --> DNS(Domain Name System)
+
+-> What is Web Development ?
+	Building websites for the internet.
+-> HTML - Used to give a structure to a website.
+-> CSS - Used to style to a website.
+-> JAVA SCRIPT - give Functionality to a website.
+All these parts is frontend. Which is shown to client.
+

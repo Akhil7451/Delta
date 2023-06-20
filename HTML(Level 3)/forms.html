@@ -1,0 +1,177 @@
+<!-- 
+    Forms in HTML ->
+        Forms are used to collect data from user.
+
+        <form> form content </form>
+
+        Action Attributes -> is used to define what action needs to be performed when a form is submitted
+                or where the form data should be sent.
+                <form action="/action">
+        
+        Form Elements ->
+            i   -   Input -> used to create multiple form controls.
+                            there are multiple types of input that can be created using type attribute.
+                            <input type="">
+                                <input type="text"> -> takes input as text.
+                                <input type="password"> -> takes input as password.
+                                <input type="number">   -> takes input as number.
+                                <input type="time"> -> takes input as time.
+                                <input type="color">    -> takes input as color.
+                                There are many more check this on mdn.   
+            ii  -   Placeholder attributes -> Is a text shown in field before entering data in that field.
+                                                <input type="text" placeholder="Enter name">       
+            iii -   Label -> elements represents a caption for an item in a user interface 
+                            When we click on text than we can directly access to the field of that label.
+                            <label>
+                                Enter your username:
+                                <input type="text" placeholder="username">
+                            </label>
+                    Classical Approach for label ->
+                            <label for="username">Username</label>
+                            <input type="text" placeholder="enter username" id="username">
+            iv  -   Button Element -> Used to insert button field in form when we click on button than only action attribute will work.
+                            <button>submit</button>
+                        types of button -> There are three types of button.
+                            <button type="submit">submit</button> -> behaviour of this button is to submit the from data
+                            <button tyoe="button">do something</button> -> it will not submit the data.
+                            <button type="reser">reset</button> -> behaviour is to reset the data filled in form.
+                        Button using input element -> 
+                            <input type="submit">   -> will create a button without any name on that.
+                            <input type="button" value="click me">  -> click me is used to inser a text on button.
+            v   -   Name Attribute -> Name of the form control. Submitted with the form as part of a name/value pair.
+                                        this change we can see in url.
+                            <input type="text" placeholder="enter name" id="username" name="username"/>
+            vi  -   Checkbox -> display a checkbox on our page.
+                                if you want that checkbox bydefault is checked then write checked attribuute.
+                            <input type="checkbox" name="age" checked/>
+                            <label for="age">I am 18+</label>
+            vii -   Radio Element -> display a radio btton on our page.
+                                    In radio button we can check only one option.
+                            <input type="radio" name="fruit" id="apple" value="apple"/>
+                            <label for="apple">Apple</label>
+                            value is to show the selected option in url.   
+            viii-   Dropdown -> display a dropdown search option on page.
+                                to select any option budefault we use selected attributes in option tag which you want to select bydefault.
+                            <select name="profession" id="profession">
+                                <option value="student">Student</option>
+                                <option value="dev">Developer</option> 
+                            </select>
+            ix  -   Range -> display a range option.(like volume).
+                            if we want that our range increases in fixed number like by 10 or 20 then use step attribute.
+                            for bydefault range use vakue attribute.
+                            <label for="volume">Volume</label>
+                            <input type="range" min="0" max="100" id="volume"/>
+            x   -   Text Area -> used to take text as input like some comments or brief description on something.
+                                Bydefault its length in 2 rows and 10 cols to change it use rows and cols attributes.
+                            <textarea id="feedback"></textarea>
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms in HTML</title>
+</head>
+<body>
+    <form action="/action">
+        <!-- Basic approach to label
+        <label>
+            Username :
+        <input type="text" placeholder="enter username">
+        </label> -->
+        <!-- Classical approach -->
+        <div>
+            <label for="username">Username :</label>
+            <input type="text" placeholder="enter username" id="username">
+        </div>
+        <div>
+            <label for="password">Password :</label>
+            <input type="password" placeholder="password" id="password">    
+        </div>
+        <div>
+            <label for="number">Number :</label>
+            <input type="number" placeholder="number" id="number">
+        </div>
+        <div>
+            <label for="age">Age :</label>
+            <input type="number" placeholder="age" id="age">
+        </div>
+        <button>Submit</button>
+        <button type="button">Button</button>
+        <button type="reset">Reset</button>
+        <input type="submit">
+    </form>
+    <hr/>
+    <!-- Name Attribute -->
+    <form action="/server">
+        <div>
+            <label for="username">Username :</label>
+            <input type="text" placeholder="enter username" id="username" name="user">
+        </div>
+        <div>
+            <label for="password">Password :</label>
+            <input type="password" placeholder="password" id="password" name="pass">    
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+    <hr/>
+    <!-- Example of a youtube url -->
+    <form action="https://www.youtube.com/results?">
+        <div>
+            <input type="text" placeholder="search in youtube" name="search_query">
+            <button type="submit">Search</button>
+        </div>
+    </form>
+    <hr/>
+    <!-- Checkbox -->
+    <form action="/server">
+        <div>
+            <label for="age">I am 18+</label>
+            <input type="checkbox" id="age">    
+            <!-- <input type="checkbox" id="age" checked> -->
+        </div>
+        <button>Submit</button>
+    </form>
+    <hr/>
+    <!-- Radio Button -->
+    <form action="/server">
+        <div>
+            <label for="apple">Apple</label>
+            <input type="radio" name="fruit" id="apple" value="apple">
+            <label for="mango">Mango</label>
+            <input type="radio" name="fruit" id="mango" value="mango">
+            <label for="banana">Banana</label>
+            <input type="radio" name="fruit" id="banana" value="banana">
+        </div>
+        <button>Submit</button>
+    </form>
+    <hr/>
+    <!-- Dropdown -->
+    <form action="/server">
+        <div>
+            Choose your profession
+            <select name="profession" id="profession">
+                <option>Select</option>
+                <option value="stu">Student</option>
+                <option value="dev">Developer</option>
+            </select>
+        </div>
+        <button>Submit</button>
+    </form>
+    <hr/>
+    <!-- Range -->
+    <form action="/server">
+       <div>
+        <label for="vol">Select volume level : </label>
+        <input type="range" min="0" max="100" name="vol" step="5" value="20"/>
+       </div> 
+       <button>Submit</button>
+    </form>
+    <hr/>
+    <form action="/server">
+        <label for="feedback">Please give your valuable feedback.</label>
+        <textarea id="feedback" name="feedback" placeholder="write your feedback here"></textarea>
+        <button>Submit</button>
+    </form>
+</body>
+</html>
