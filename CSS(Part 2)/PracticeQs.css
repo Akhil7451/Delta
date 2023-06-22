@@ -1,0 +1,38 @@
+/* 
+Practice Qs 1
+    Implement the following CSS for the given html document.
+        1   -   Set the font family of entire document to Courier new
+        2   -   Set text color for all h1 headings to #1b74e4.
+        3   -   Set background color of search button to black & text to white.
+        4   -   Set background color of login & signup button to aqua.
+
+Practice Qs 2
+    Write css statement to implement the following ::after
+        1   -   Set the color for paragraphs inside divs with the id "myid" to green.
+*/
+
+*{
+    font-family: 'Courier New';
+}
+
+h1{
+    color: #1b74e4;
+}
+
+#searchbtn{
+    background-color: black;
+    color: white;
+}
+
+.userbtn{
+    background-color: aqua;
+}
+
+/* Practice Qs 2 */
+#myid p{
+    color: green;
+}
+
+div[id="myid"] p{
+    color: green;
+}
