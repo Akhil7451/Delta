@@ -1,0 +1,141 @@
+Box Model in CSS    ->  browser will interprete every element we make in html as a box model.
+
+        i   -   Height  ->  Height of a content. By default it sets the content areaheight of an element.
+                            
+                            div{
+                                height: 100px;
+                            }
+
+        ii  -   Width   ->  Width of a content. By default, it sets the content area width of the element.
+
+                            div{
+                                width: 300px;
+                            }
+
+        iii -   Border  ->  Border is boundry walls around out content. Used to set an element's border.
+                            It's properties -
+                            1   ->  border-width    ->  Used to set the width of border.
+
+                                                    div{
+                                                        border-width: 5px;
+                                                    }
+
+                            2   ->  border-style    ->  Used to set the style of border.
+
+                                                    div{
+                                                        border-style: solid;
+                                                    }
+
+                            3   ->  border-color    ->  Used to set the color of border.
+
+                                                    div{
+                                                        border-color: yellow;
+                                                    }
+                            Border Shorthand    ->  width | style | color
+
+                                                    div{
+                                                        border: 2px soloid blue;
+                                                    }
+
+                            Border Sides    ->  To control an individual side of the box. We can use all three properties mentioned above in border sides.
+
+                                            border-left     ->  to adjusts the left side of a border.
+                                                            border-left: green;
+                                            
+                                            border-right    ->  to adjusts the left side of a border.
+                                            
+                                            border-top      ->  to adjusts the left side of a border.
+                                            
+                                            border-bottom   ->  to adjusts the left side of a border.
+
+                            Border Radius   ->  Used to round the corners of an element's outer border edge. For more properties read on mdn.
+                                            
+                                            div{
+                                                border-radius: 15px;
+                                            }
+                                            
+                                            div{
+                                                border-radius: 50%;
+                                            }                            
+
+        iv  -   Padding ->  Blank area between content and border.
+
+                            padding-left     ->  to adjusts the left side of a border.
+                                                
+                                                div{
+                                                    padding-left: 50px;
+                                                }
+                                            
+                            padding-right    ->  to adjusts the left side of a padding.
+                            
+                            padding-top      ->  to adjusts the left side of a padding.
+                            
+                            padding-bottom   ->  to adjusts the left side of a padding.
+
+                                    Padding Shorthand   -> 
+                                 
+                                            i   -   for all 4 sides (padding: 50px;)
+                                            ii  -   top & bottom | left & right (padding: 1px 2px;)
+                                            iii -   top | left & right | bottom (padding: 1px 2px 3px;)
+                                            iv  -   top | right | bottom | left (padding: 1px 2px 3px 4px;) 
+
+        v   -   Margin  ->  Margin is used to set the space between two boxes outside of borders.
+
+                            margin-left     ->  to adjusts the left side Margin.
+                                                
+                                                div{
+                                                    margin-left: 50px;
+                                                }
+                                            
+                            margin-right    ->  to adjusts the left side of a margin.
+                            
+                            margin-top      ->  to adjusts the left side of a margin.
+                            
+                            margin-bottom   ->  to adjusts the left side of a margin.
+
+                                    Margin Shorthand   -> 
+                                 
+                                            i   -   for all 4 sides (margin: 50px;)
+                                            ii  -   top & bottom | left & right (margin: 1px 2px;)
+                                            iii -   top | left & right | bottom (margin: 1px 2px 3px;)
+                                            iv  -   top | right | bottom | left (margin: 1px 2px 3px 4px;)
+
+        Inline v/s Block    ->  Block element-> Takes up the full-width available(whole block). Start from new line.
+                                                Element 1
+                                                Element 2
+                                                Element 3
+
+                                Inline Element  ->  Takes up only necessary width. Don't start from new line.
+                                            Element 1   Element 2   Element 3 
+
+        vi  -   Display ->  It sets whether an element is treated as a block or inline element and the layout used for its children.
+
+                            display: inline; (to let the block element behave as inline-block element).
+
+                            display: inline-block; (to let the block element behave as inline-block element with property of block but will diplay as inline.).
+
+                            display: block; (to let the inline element behave as block element)
+
+                            display: none; (to let the element disappear from the page).
+                            
+                            Use alt+z for wrap.
+
+                            height & widt properties are ignored by the browser in case of inline element.
+
+                            padding and margin for inline elements is only set to left and right of the element.
+
+        Units in CSS    ->  Absolute            Relative
+                                px                  %   
+                                pt                  em
+                                pc                  rem 
+                                cm                  ch
+                                mm                  vh
+                                in                  vw + many more.
+
+                    i   -   Percentage(%)   ->  It is often used to define a size as relative to an element's parent object.
+
+                    ii  -   Em  ->  Font size of the parent, in the case of properties like font-size, and font size of the element itself, int the case of other properties like width.
+                            Drawback of Em  ->  Snowball effect in nested elements.
+
+                    iii-    Rem(Root Em)    ->  Font size of the root element.
+                                

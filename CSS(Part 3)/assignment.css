@@ -1,0 +1,20 @@
+#first{
+    height: 150px;
+    width: 300px;
+    background-color: gray;
+    margin: 20px 1em 40px 2em;
+    padding: 1em;
+}
+
+.second{
+    height: 100px;
+    width: 100px;
+    background-color: pink;
+    border: 2px solid black;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+li{
+    display: inline;
+}
