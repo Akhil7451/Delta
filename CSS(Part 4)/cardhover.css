@@ -1,0 +1,23 @@
+.card{  /* border is not surrounding around both image and text below the image after assigning width and height keeping equal due to size of image try to change the size og image after that it will be working fine.*/
+    width: 200px;   
+    height: 300px;   
+    display: inline-block;
+    margin: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 2px 4px 8px black;
+    transition: 1s;
+}
+
+.desc{
+    padding: 0 2px 0 2px;
+}
+
+img{
+    width: 100%;    /* width will be equal to its parent container.*/
+    border-radius: 3px 3px 0 0;
+}
+
+.card:hover{
+    box-shadow: 0 8px 16px goldenrod;
+}

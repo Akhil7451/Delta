@@ -1,0 +1,76 @@
+Alpha Channel   ->  Sets the opacity(visibility) for a color.
+                    Range from 0 to 1.
+                        rgba(255, 255, 255, 0.3)    //0.3 is alpha value.
+
+opacity         ->  Set the opacity for the element.
+                    Range from 0 to 1.(at 0 element disappears).
+                        opacity: 0.5;
+
+CSS Transition  ->  Transitions enable you to define the transition between two states of an element.
+                    It has 4 properties ->
+                            propert name | duration | timing-function | delay
+                    transition: margin-top 2s ease-in-out 0.2s;
+
+                    transition-delay: 1s;   (will set after hover transition should be delayed for 1s)
+                    
+                    transition-duration: 1s;(will set transition should take 1s).
+                    
+                    transition-timing-function: linear;  //learn more from mdn.
+                    
+                    transition-duration: 1s; //transition will take 1 sec.
+
+                    margin: 0 auto; //align element to the center of the line.
+
+CSS Transform   ->  This property lets you roatate, scalem or translate an element.
+
+                i   -   Rotate ->  rotate the element.
+                            transform: rotate(45deg).   //to rotate in anti-clockwise write transform: rotate(-45deg).
+
+                ii  -   scale  ->  increase or decrease size of element with respect to X and Y axis.
+                            transform: scale(0.5);  //this will half the element respect to both x and y axis.
+                            transform: scale(0.5, 2);  //this will half the element respect to x and double the size with respect to y axis.
+                            transform: scaleX(0.5);  //this will half the element respect to x axis.
+                            transform: scaleY(0.5);  //this will half the element respect to y axis.
+
+                iii -   Translate   ->  change the position of element with respect to x and y axis.
+                            transform: translate(100px, 100px)    //this will move the element respect to both x and y axis.
+                            transform: translateX(10px)
+                            transform: translateY(10px)
+
+                iv  -   Skew    ->  tilts the element.
+                            transform: skew(30deg).
+
+Box Shadow  ->  It adds shadow effect around an element's frame.
+                box-shadow: 5px 5px 10px green; //5px-> x offset(shadow will be at a distance of 2px from x axis)
+                                                //5px-> y offset(shadow will be at a distance of 2px from y axis)
+                                                //10px-> blur radius(sets how much blur our shadow will be).
+                                                //green-> color of shadow
+
+Background Image    ->  Lets you set an image as a background.
+                        background-image: url("name.jpg");
+                        background-size: contain / cover / auto;    //contain   ->  if bg image is not fit with size it will repeat the image to fill tha area.
+                                                                    //cover   ->  if bg image is not fit with size it will crop the image to fill tha area.
+                                                                    //auto   ->  if bg image is not fit with size it will stretch the image to fill tha area.
+                         
+position    ->  The position CSS property sets how an element is positioned in a document.
+                The top, right, bottom, and left properties determine the final location of positioned elements.
+
+                i   -   static  ->  the top, right, bottom, left, and z-index properties have no effect. This is the default value.
+                                    position: static;
+
+                ii  -   relative    ->  the offset is relative to itself(from the center of itself) based on the values of top, right, bottom, and left.
+                                        position: relative;
+                                        top: 100px;
+                                        
+                iii -   absolute    ->  The element is removed from the normal document flow, and no space is created for the element in the page layout.
+                                        It is positioned relative to its closet positioned ancestor, if any; otherwise, it is placed relative to the initial
+                                        containing block. In absolute which element is moved from its place so if we create another div it will be on the place of second one which was moved.
+                                        position: absolute;
+                                        top: 100px;
+
+                iv  -   fixed        -> The element is removed from the normal document flow, and no space is created for the element in the page layout.
+                                        It is positioned relative to the initial containing block established by the viewport.
+                                        In absolute which element is moved from its place so if we create another div it will be on the place of second one which was moved.
+                                        Read its exception on mdn.
+                                        position: fixed;
+                                        top: 100px;

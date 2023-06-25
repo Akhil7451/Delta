@@ -1,0 +1,121 @@
+*{
+    margin-top: 20px;
+}
+
+/* Alpha Channel */
+
+div{
+    height: 200px;
+    width: 200px;
+    background-color: rgba(77, 255, 0, 0.6)
+}
+
+/* Opacity */
+
+#opacity{
+    background-color: #4dff00ff;
+    opacity: 0.5;
+}
+
+/* Transition */
+
+#transition{
+    height: 200px;
+    width: 200px;
+    background-color: #4dff0099;
+    transition-delay: 0.5s;
+    transition-duration: 2s;
+    transition-timing-function: steps();
+}
+
+#transition:hover{
+    background-color: black;
+    border-radius: 50%;
+}
+
+/* New */
+
+#new{
+    height: 100px;
+    width: 100px;
+    background-color: #4dff00ff;
+    margin: 0 auto;
+    margin-top: 20px;
+    transition: margin-top 2s ease-in 0.2s;
+}
+
+#new:hover{
+    margin-top: 400px  ;
+    background-color: pink;
+}
+
+/* Transform */
+
+section{
+    margin-top: 100px;
+}
+
+.transform{
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    background-color: #7aa874;
+    border: 2px solid black;
+    margin: 10px;
+}
+
+div:nth-of-type(2n){
+    background-color: #f7db6a;
+}
+
+div:nth-of-type(3n){
+    background-color: #ebb02d;
+}
+
+/* Rotate */
+
+#one{
+    transform: rotate(45deg);
+}
+
+/* Scale */
+
+#two{
+    transform: scale(0.5);
+}
+
+/* Translate */
+
+#three{
+    transform: translate(50px);
+}
+
+/* Skew */
+
+#four{
+    transform: skew(30deg);
+}
+
+/* All transform property in single div */
+
+#five{
+    transform: rotate(45deg) translate(60px) scale(0.5) skew(30deg);
+}
+
+/* Box Shadow */
+button{
+    background-color: #7aa874;
+    box-shadow: 5px 5px 10px green;
+}
+
+/* Background Image */
+
+#bgimage{
+    width: 400px;
+    height: 200px;
+    background-color: #7aa874;
+    margin: 10px auto;
+    background-image: url(bg.jpg);
+    background-size: cover;
+    color: #ffffff;
+}
