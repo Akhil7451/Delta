@@ -1,0 +1,78 @@
+Flex    -       Flexible Box Layout(Flex) Helps to make our website responsive.
+                It is a one-dimensional layout method for arranging items in rows and columns.
+        
+                Flex Model  ->  horizontal axis = main axis = x-axis        //in case when elements are row wise.
+                                vertical axis = cross axis = y-axis
+        
+                                vertical axis = main axis = x-axis        //in case when elements are column wise.
+                                horizontal axis = cross axis = y-axis
+        
+        
+        
+                If we gives any property to container that is called flex container. If we want to add flex to elements than add display: flex; property to that container.
+
+        FlexBox Direction   ->  It sets how flex items are placed in the flex container, along which axis and direction.
+
+                i   -   flex-direction: row;             //main axis left to right
+                ii  -   flex-direction: row-reverse;     //main axis right to left
+                iii -   flex-direction: column;          //cross axis top to bottom
+                vi  -   flex-direction: column-reverse;  //cross axis bottom to top
+
+                display: flex;                  //by default it keeps the element inside container in row.
+                display-direction: colums       //it keeps the element inside container in column.
+
+                if we set width of element less than width of a container then their size is reduced but if there width is more than the container's width
+                then by default flex will reduce there width and fixed them according to the width of a container.
+
+        Justify Content -   Tells how the browser distributes space between and around content items along the main axis.(spaces along x-axis between elements inside a container.)
+
+                i   -   justify-content: flex-start;     //shift all the element to the start
+                ii  -   justify-content: flex-end;       //shift all the element to the end
+                iii -   justify-content: center;         //shift all the element to the center
+                iv  -   justify-content: space-between;  //assign the space between all the element.
+                v   -   justify-content: space-around;   //assign the space around all the element. The space before and after first and last element respectively is less then the space between all other elements.
+                vi  -   justify-content: space-evenly;   //assign the space around all the element equally before and after first and last elements respectively.
+
+        Flex Wrap   -   Sets whether flex items are forced onto one line or can wrap onto multiple lines.
+
+                i   -   flex-wrap: wrap;          // if there is no space for any content in first line than it will goes to next line. 
+                ii  -   flex-wrap: nowrap;        // it will not wrap a content.
+                iii -   flex-wrap: wrap-reverse;  // wrap in a reverse direction along with y-axis.
+
+        Align items -   Distributes our items along the cross axis.
+
+                i   -   align-items: flex-start;          //    distribute all the spaces along cross axis(from top to bottom)
+                ii  -   align-items: flex-end;            //    (from bottom to top)
+                iii -   align-items: center;              //    items sets in center along with cross axis.
+                iv  -   justify-content: baseline;        //    align the content along the same line of text.
+
+        Align Content   - It sets the distribution of space between and around content items along a flexbox's cross-axis.
+
+                i   -   align-content: flec-start/flex-end/center                       //
+                ii  -   align-content: space-between/space-around/space-evenly          //
+                iii -   align-content: baseline;                                        //
+
+        Align Self  -   Aligns an items along the cross axis. It is used to apply properties to individual items.
+                
+                i   -   align-self: flext-start;        //
+                ii  -   align-self: flex-end;           //  
+                iii -   align-self: center;             // 
+                iv  -   align-self: baseline;           // 
+
+        Flex Sizing -   Sets size of a flext item.
+
+                i   -   flex-basis: 100px;      //It sets the initial main size of a flex item.
+                ii  -   flex-grow: 1;           //It specifies how much of the flex container's remaining space should be assigned to flex item's size.
+                        max-width: 50px;        //item will not exceed its width more than 50px;
+                        max-height: 50px        //item will not exceed its height more than 50px;
+                iii -   flex-shrink: 1;         //It sets the flex shrink factor of a flex-item.
+
+                Flex Shorthand
+
+                        i       -       flex-grow | flex-shrink | flex-basis
+                                        flex: 2 2 100px;
+                        ii      -       flex-grow | flex-basis
+                                        flex: 2 100px;
+                        iii     -       flex-grow(unitless)
+                                        flex: 2;
+                        iv      -       flex: 100px;

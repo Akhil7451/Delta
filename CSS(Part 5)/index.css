@@ -1,0 +1,61 @@
+#container{
+    height: 600px;
+    width: 80%;
+    background-color: azure;
+    margin: 10px auto;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    /* align-items: baseline; */
+    /* align-content: flex-end; */
+}
+
+#container div{
+    height: 100px;
+    width: 300px;   /*  this is for flex wrap property  */
+    /* width: 100px;    this is for al other property   */
+    color: white;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+h1{
+    text-align: center;
+}
+
+#violet{
+    background-color: violet;
+}
+
+#indigo{
+    background-color: indigo;
+}
+
+#blue{
+    background-color: blue;
+    height: 75px !important;
+    /* flex-grow: 1; */
+    /* max-width: 100px; */
+    flex-shrink: 1;
+}
+
+#green{
+    background-color: green;
+}
+
+#yellow{
+    background-color: yellow;
+}
+
+#orange{
+    background-color: orange;
+    height: 200px !important;
+    font-size: 3.5em !important;
+    /* flex-basis: 3500px; */
+}
+
+#red{
+    background-color: red;
+}
