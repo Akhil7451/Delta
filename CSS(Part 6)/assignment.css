@@ -1,0 +1,93 @@
+.container{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    border: 2px solid black;
+    display: grid;
+    grid-template-rows: repeat(12, 1fr);
+    grid-template-columns: repeat(12, 1fr);
+    row-gap: 10px;
+    column-gap: 10px;
+}
+
+.box{
+    background-color: palevioletred;
+    text-align: center;
+    border: 2px solid black;
+    font-size: 1.5rem;
+}
+
+.header{
+    grid-column: 1/ span 12;
+}
+
+.sidebar{
+    grid-row: 2/ span 10;
+    grid-column: 1/ span 3;
+}
+
+.navigation{
+    grid-column: 4/ span 6;
+}
+
+.ads{
+    grid-row: 2/ span 10;
+    grid-column: 10/ span 3;
+}
+
+.main{
+    grid-row: 3/ span 9;
+    grid-column: 4/ span 6;
+}
+
+.footer{
+    grid-column: 1/ span 12;
+}
+
+/* Assignment 2 */
+
+@media(max-width: 720px){
+    .header{
+        grid-column: 1/ span 12;
+    }
+    .navigation{
+        grid-column: 1/ span 12;
+    }
+    .sidebar{
+        grid-row: 3/ span 9;
+        grid-column: 1/ span 3;
+    }
+    .main{
+        grid-row: 3/ span 9;
+        grid-column: 4/ span 9;
+    }
+    .ads{
+        grid-row: 12;
+        grid-column: 1/ span 3;
+    }
+    .footer{
+        grid-column: 4/ span 9;
+    }
+}
+
+/* Assignment 3 */
+
+.loader{
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid goldenrod;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        /* set rotation to 0 degree */
+        transform: rotate(0deg);
+    }
+    100% {
+        /* set rotation to 360 degree */
+        transform: rotate(360deg);
+    }
+}
