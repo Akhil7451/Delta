@@ -1,0 +1,150 @@
+CSS Grid    -   Setting a container's display to grid will make all children grid items.
+                container{
+                    display: grid;      //display the elements column wise with some space between them.
+                }
+
+                Grid can be inline too..    ->
+                    container{
+                        display: inline-grid;
+                    }
+
+    Grid Model  ->  Grid is formed in 2D form.
+
+        Grid Lines  -> used to form grids.
+
+            i   -   Column Lines(vertical lines)
+            ii  -   Row Lines(horizontal lines)
+        
+        Grid Cell   ->  Cell is a box formed with the help of grid lines.
+
+        Grid Track  ->  Space between two lines is known as grid track.
+
+    Grid Template   ->  They define the line & track sizing.
+
+        i   -   grid-template-rows  ->  for defining rows.
+                    grid-template-rows: 100px 100px 100px;  //make rows of width 100px inside container.
+
+        ii  -   grid-template-column    ->   for defining column.
+                    grid-template-columns: 100px 100px 100px;  //make columns of width 100px inside container.
+
+        Optional properties(mostly these are not used in webpages.)
+
+        iii -   grid-template-column    ->   for defining column.   //This we will not use in our webpage.
+                    grid-template-column: auto auto auto;  //make columns of equal size inside container.
+
+        iv  -   grid-template-rows  ->  Is used to divide all available space.
+
+                    grid-template-rows: repeat(count, 1fr)  //divide the container's height in count parts equally as row.
+                    grid-template-rows: repeat(2, 1fr)  ==  grid-template-rows: repeat(1fr, 1fr)
+
+                    grid-template-columns: repeat(count, 1fr)  //divide the container's width in count parts equally as columns.
+    
+    Grid Gaps   ->  They define the gaps between the lines.
+        i   -   row-gap: 10px;      // maintain a gap of 10px between rows.
+        ii  -   column-gap: 10px;   // maintain a gap of 10px between columns.
+        iii -   grid-gap: 10px;     // maintain a gap of 10px around grid. It is a shorthand of column and row gap.
+
+    Grid columns    ->  Defines an item's starting & ending position inside the column.
+        i   -   grid-column-start:line_number;      //start the grid item from given line number.
+        ii  -   grid-column-end: line_number;       //end the grid item at given line number.
+        shorthand
+        iii -   grid-column: 1/4;                   //starting from line number 1 and ends at line number 4.
+        iv  -   grid-column: 1/span 2;              //start from line number 1 and span 2 means we need 2 columns.
+
+    Grid Rows   ->  Defines an item's starting & ending position inside the row.
+        i   -   grid-row-start:line_number;      //start the grid item from given line number.
+        ii  -   grid-row-end: line_number;       //end the grid item at given line number.
+        shorthand
+        iii -   grid-row: 1/4;                   //starting from line number 1 and ends at line number 4.
+        iv  -   grid-row: 1/span 2;              //start from line number 1 and span 2 means we need 2 rows.
+
+    Common Properties   ->  
+        For horizontal  
+            i   -   justify-items: start/center/end       //for justify all items along rows inside a containers
+            ii  -   justify-self: start/end/center        //for individual items inside a container.
+
+        For vertical    ->  
+            i   -   align-items: start/center/end         //for align all items along column inside a containers
+            ii  -   align-self: start/center/end          //for individual items inside a container.
+
+        For both vertical & horizontal
+            i   -   place-items: start/center/end
+            ii  -   place-self: start/center/end
+
+    CSS Animation   ->  To animate CSS elements.
+            @keyframes myName{           //myName is animation name.
+                from{font-size: 20px}
+                to{font-size: 40px}
+            }
+
+            i   -   animation-name  ->  name which we had given to our animation template.
+            ii  -   animation-duration  ->  how long animation will continue.
+            iii -   animation-timing-function   -> how your animation behave. 
+            iv  -   animation-delay ->  how long will it take to start the animation.
+            v   -   animation-iteration-count   ->  how many times you want to repeate your animation.
+            vi  -   animation-direction ->  set the direction of animation to be performed.(normal, reverse, alternate, alternate-re).
+
+            shorthand   ->  animation: myName 3s ease-in 0s infinite normal;
+
+            % in Animation  ->  if we want to animate our elements according to the percentage
+            
+                @keyframes myName{
+                    0%{
+                        font-size: 20px;
+                    }
+                    50%{
+                        font-size: 30px;
+                    }
+                    100%{
+                        font-size: 40px;
+                    }
+                }
+
+    Media Queries   ->  Help to create a responsive website. Lear more on mdn.
+
+        media features - width(of viewport)
+            @media(width: 400px){
+                div{
+                    background-color: red;      //change div when width is 400px.
+                }
+            }
+
+            @media(min-width: 400px){
+                div{
+                    background-color: red;      //change div when width >= 400px.
+                }
+            }
+
+            @media(max-width: 400px){
+                div{
+                    background-color: red;      //change div when width <= 400px.
+                }
+            }
+            
+            for setting range use and between   -
+
+            @media(min-width: 200px)and(max-width: 300px){
+                div{
+                    background-color: red;      //change div when we set a range(200px =< width <= 400px)
+                }
+            }
+
+            media features  -   orientation(of viewport)
+
+            @media(orientation: landscape){
+                div{
+                    background-color: red;      //chnage when orientation is landscape.
+                }
+            }
+
+    z-index ->  It decides the stack level of elements.
+                Overlapping elements with a larger z-index cover those with a smaller one.
+                When z-index of all elements are same than element whose properties are defined at last will overlap.
+                element whose position is static or have a by default position we can not set z-index for that elements.
+
+                z-index: auto(0)
+                z-index: 1/2/....
+                z-index: 1/-2/...
+
+        
+

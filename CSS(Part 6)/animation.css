@@ -1,0 +1,23 @@
+.box{
+    height: 100px;
+    width: 300px;
+    background-color: pink;
+    /* animation-name: fontAnimation;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    animation-delay: 0;
+    animation-iteration-count: infinite;
+    animation-direction: normal; */
+    animation: fontAnimation 3s ease-in 0s infinite normal;     /*Shorthand*/
+}
+
+@keyframes fontAnimation {
+    from {
+        font-size: 20px;
+        background-color: pink;
+    }
+    to {
+        font-size: 50px;
+        background-color: blue;
+    }
+}
