@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar fixed-top bg-primary navbar-expand-md">
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand">Brand Name</a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+                <span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="">Home</a>
+                    <a class="nav-link" href="">Contact</a>
+                    <a class="nav-link" href="">About Us</a>
+                </div>
+            </div>
+            <!-- Form -->
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search">
+                <button type="button" class="btn btn-outline-light">Search</button>
+            </form>
+        </div>
+    </nav>
+    <!-- Container -->
+    <div class="container">
+        <h2>Bootstrap Demo</h2>
+        <!-- Card -->
+        <div class="card" style="width: 18rem;">
+            <img src="bg.jpg" class="card-img-top"/>
+            <div class="card-body">
+                <h5 class="card-title">Nature</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Know More</a>
+            </div>
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum aliquid laborum sequi officia deleniti molestiae iste dolor? Ipsum iure quod ea praesentium tenetur minima tempora consequatur saepe obcaecati voluptate! Veniam?
+        Esse, ducimus ex pariatur deleniti a incidunt harum, delectus suscipit fugiat nisi animi distinctio nulla amet ullam nemo at dolore itaque quibusdam nobis impedit. Recusandae repellat pariatur quae qui natus.
+        Ipsum hic et aliquam! Repellat doloribus reiciendis itaque eaque adipisci quod, nemo cupiditate tempore esse nam fuga harum nihil obcaecati quasi molestias voluptas a repudiandae, nesciunt debitis amet aut? Maxime?
+        Accusamus tempore neque, deserunt quisquam harum ab illum consequatur eveniet eius nesciunt modi maiores totam officiis aliquam fugiat dolorem animi nam asperiores quidem sed laudantium doloremque vel. Officiis, rerum dignissimos?
+        Dicta, assumenda commodi? Asperiores optio veritatis at voluptate, nobis accusamus, dolor soluta ab exercitationem est, nisi mollitia ex molestiae maiores? Quam porro iusto explicabo commodi ipsam accusamus, consequatur illo enim?</p>
+        <!-- Button Using Bootstrap -->
+        <button type="button" class="btn btn-primary">Primary</button>
+        <button type="button" class="btn btn-secondary">Secondary</button>
+        <button type="button" class="btn btn-success">Success</button>
+        <button type="button" class="btn btn-danger">Danger</button>
+        <button type="button" class="btn btn-warning">Warning</button>
+        <button type="button" class="btn btn-info">Info</button>
+        <button type="button" class="btn btn-light">Light</button>
+        <button type="button" class="btn btn-dark">Dark</button>
+        <button type="button" class="btn btn-link">Link</button>
+        <br />
+        <br />
+        <!-- Outline Buttons -->
+        <button type="button" class="btn btn-outline-primary">Primary</button>
+        <button type="button" class="btn btn-outline-secondary">Secondary</button>
+        <button type="button" class="btn btn-outline-success">Success</button>
+        <button type="button" class="btn btn-outline-danger">Danger</button>
+        <button type="button" class="btn btn-outline-warning">Warning</button>
+        <button type="button" class="btn btn-outline-info">Info</button>
+        <button type="button" class="btn btn-outline-light">Light</button>
+        <button type="button" class="btn btn-outline-dark">Dark</button>
+        <br />
+        <br />
+        <!-- Button Size -->
+        <button type="button" class="btn btn-primary btn-lg">Large button</button>
+        <button type="button" class="btn btn-primary btn-sm">Small button</button>
+        <br />
+        <br />
+        <!-- Disable Button -->
+        <button type="button" class="btn btn-primary" disabled>Primary button</button>
+        <button type="button" class="btn btn-outline-primary" disabled>Primary button</button>
+        <br />
+        <br />
+        <!-- Make link and input elements a button  -->
+        <a class="btn btn-primary" href="#" role="button">Link</a>
+        <input class="btn btn-primary" type="button" value="Input">
+        <input class="btn btn-primary" type="submit" value="Submit">
+        <input class="btn btn-primary" type="reset" value="Reset">
+        <br />
+        <br />
+        <!-- Badges -->
+        <h3>Notifications<span class="badge bg-danger">10+</span></h3>
+        <button type="button" class="btn btn-primary">Requests<span class="badge bg-danger">100+</span></button>
+        <br />
+        <br />
+        <!-- Alerts -->
+        <div class="alert alert-primary alert-dismissible" role="alert">
+          A simple primary alert—check it out!
+          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+        <div class="alert alert-secondary alert-dismissible" role="alert">
+          A simple secondary alert—check it out!
+          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+        <div class="alert alert-success alert-dismissible" role="alert">
+          A simple success alert—check it out!
+          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+        <div class="alert alert-danger alert-dismissible" role="alert">
+          A simple danger alert—check it out!
+          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+        <div class="alert alert-warning alert-dismissible" role="alert">
+          A simple warning alert—check it out!
+          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+        <div class="alert alert-info alert-dismissible" role="alert">
+          A simple info alert—check it out!
+          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+        <div class="alert alert-light alert-dismissible" role="alert">
+          A simple light alert—check it out!
+          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+        <div class="alert alert-dark alert-dismissible" role="alert">
+          A simple dark alert—check it out!
+          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+        <br />
+        <!-- Button Group -->
+        <div class="container">
+            <h2>Button Group</h2>
+            <!-- Buttons not grouped -->
+            <button class="btn btn-outline-primary">One</button>
+            <button class="btn btn-outline-success">Two</button>
+            <button class="btn btn-outline-danger">Three</button>
+            <!-- Buttons in group -->
+            <div class="btn-group">
+                <button class="btn btn-outline-primary">One</button>
+                <button class="btn btn-outline-success">Two</button>
+                <button class="btn btn-outline-danger">Three</button>
+            </div>    
+        </div>
+        <br />  
+    </div>
+    <script src="//cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
