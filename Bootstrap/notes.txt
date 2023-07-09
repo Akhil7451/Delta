@@ -1,0 +1,264 @@
+What is Bootstrap ?
+
+    Bootstrap is a powerful, feature-packed frontend toolkit. Build anything-from
+    prototype to production-in minutes.
+
+Benefits pf Bootstrap   ->
+        i   -   Makes Development Faster & Easier.
+        ii  -   Good choice of pre-built components.    //components are already responsive.
+        iii -   Good browser Compatibility.
+
+Using Bootstrap ->  Without any build procedure we can use bootstrap via CDN(Content Delivery Network   ->  It is a computer network helps to deliver content from the nearest server)
+    With the help of CDN we add links of both Java Script and CSS to our web-page.
+    Which we will find on bootstrap.com .
+    Link for CSS is to be copied inside head tag.
+        <link href="CSS LINK" rel="stylesheet">
+
+    Link for JS is to be copied inside body tag.
+        <script src="JS LINK"></script>
+    
+What will we cover ?
+                components                                          Layouts
+    pre-built and reusable piece of                     overall structure and arrangement
+    user interface(UI).                                 of the elements.
+
+    eg  -   buttons, forms.                             eg  -   container, grid.
+
+    COMPONENTS  ->
+
+    Container(layout)   -   Containers are used to contain, pad, and (sometimes) center the content within them.
+        <div class="container"></div>   //create a container usind bootstrap.
+
+        Different types of container are    ->  
+
+            The table below illustrates how each container’s max-width compares to the original .container and .container-fluid
+            across each breakpoint.
+              
+                                Extra small       Small       Medium      Large       X-Large     XX-Large
+                                <576px            ≥576px      ≥768px      ≥992px      ≥1200px     ≥1400px
+            ----------------------------------------------------------------------------------------------
+            .container	        100%	        540px	      720px	      960px	      1140px	  1320px
+            .container-sm	    100%	        540px	      720px	      960px	      1140px	  1320px
+            .container-md	    100%	        100%	      720px	      960px	      1140px	  1320px
+            .container-lg	    100%	        100%	      100%	      960px	      1140px	  1320px
+            .container-xl	    100%	        100%	      100%	      100%	      1140px	  1320px
+            .container-xxl	    100%	        100%	      100%	      100%	      100%	      1320px
+            .container-fluid    100%	        100%	      100%	      100%	      100%	      100%
+
+    Button using bootstrap   -   create a button and give class="btn" to that button.
+        <button class="btn">Click me</button>
+
+        Different types of button   ->  using extra info in class you can create designed buttons.
+
+            <button type="button" class="btn btn-primary">Primary</button>
+            <button type="button" class="btn btn-secondary">Secondary</button>
+            <button type="button" class="btn btn-success">Success</button>
+            <button type="button" class="btn btn-danger">Danger</button>
+            <button type="button" class="btn btn-warning">Warning</button>
+            <button type="button" class="btn btn-info">Info</button>
+            <button type="button" class="btn btn-light">Light</button>
+            <button type="button" class="btn btn-dark">Dark</button>
+            <button type="button" class="btn btn-link">Link</button>
+
+        Also we can add outline buttons using bootstrap(only change we have to do is just write ouyline between btn-primary(bt-outline-primary))
+
+            <button type="button" class="btn btn-outline-primary">Primary</button>
+            <button type="button" class="btn btn-outline-secondary">Secondary</button>
+            <button type="button" class="btn btn-outline-success">Success</button>
+            <button type="button" class="btn btn-outline-danger">Danger</button>
+            <button type="button" class="btn btn-outline-warning">Warning</button>
+            <button type="button" class="btn btn-outline-info">Info</button>
+            <button type="button" class="btn btn-outline-light">Light</button>
+            <button type="button" class="btn btn-outline-dark">Dark</button>
+
+        Fancy larger or smaller buttons? Add .btn-lg or .btn-sm for additional sizes.
+
+            <button type="button" class="btn btn-primary btn-lg">Large button</button>
+            <button type="button" class="btn btn-primary btn-sm">Small button</button>
+        
+        Make buttons look inactive by adding the disabled boolean attribute to any <button> element.
+
+            <button type="button" class="btn btn-primary" disabled>Primary button</button>
+            <button type="button" class="btn btn-outline-primary" disabled>Primary button</button>
+
+        You can also use .btn classes on <a> or <input> elements to make them a button.
+            <a class="btn btn-primary" href="#" role="button">Link</a>
+            <input class="btn btn-primary" type="button" value="Input">
+            <input class="btn btn-primary" type="submit" value="Submit">
+            <input class="btn btn-primary" type="reset" value="Reset">
+
+    Badges  ->  are those popups which tells us how many whatsapp messages are there.
+            <span class="badge bg-secondary">New</span>
+            
+            We can also create a badge of button.
+                <button type="button" class="btn btn-primary">Primary button<span class="badge bg-secondary">New</span></button>
+
+            We can also set position of badges.(Read about on bootstrap documentation)
+
+    Alert   ->  A popup when we refresh page or perform any action.
+
+            <div class="alert alert-primary" role="alert">
+              A simple primary alert—check it out!
+            </div>
+            <div class="alert alert-secondary" role="alert">
+              A simple secondary alert—check it out!
+            </div>
+            <div class="alert alert-success" role="alert">
+              A simple success alert—check it out!
+            </div>
+            <div class="alert alert-danger" role="alert">
+              A simple danger alert—check it out!
+            </div>
+            <div class="alert alert-warning" role="alert">
+              A simple warning alert—check it out!
+            </div>
+            <div class="alert alert-info" role="alert">
+              A simple info alert—check it out!
+            </div>
+            <div class="alert alert-light" role="alert">
+              A simple light alert—check it out!
+            </div>
+            <div class="alert alert-dark" role="alert">
+              A simple dark alert—check it out!
+            </div>
+
+        We can also add many features in popups explore it on documentation.
+
+        Also we add dismissal X sign on alert by adding button and adding classs btn-dismissible.
+            <div class="alert alert-primary alert-dismissible" role="alert">
+              A simple primary alert—check it out!
+              <button type="button" class="btn-close"></button>
+            </div>
+
+        If we want that this dismissal button will work we have to add some JS class(data-bs-dismiss="alert") to our button like-
+            <div class="alert alert-primary alert-dismissible" role="alert">
+              A simple primary alert—check it out!
+              <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+
+    Button Group    ->  We can also group our buttons in a container.
+            <div class="btn-group">
+                <button class="btn btn-outline-primary">One</button>
+                <button class="btn btn-outline-success">Two</button>
+                <button class="btn btn-outline-danger">Three</button>
+            </div>
+        
+        We can also do same with checkboxes and radio buttons by making them buttons read more about in documentation.
+
+    Navbar  ->  A bar, usually at the top of a web page, offering a number of links to help the user to navigate.
+                use class="navbar"      //make a navbar
+
+                class="navbar fixed-top"    //fixed the navbar on top.
+
+                class="navbar fixed-top navbar-expand-lg"   //to display all ancor tags in a row.
+
+                <a class="nav-link" href="">About Us</a>    //class nav-link will give it a property so that on hovering the anchor tag will get bolder just like we are hovering on a link.
+
+                <button class="navbar-toggler"></button>    //class for toggle the navbar.
+
+                For toggler go through documentation.
+
+            Also we can add many things on navbar read documentation.
+
+    Form    ->  We can add form component using bootstrap.
+            <form class="d-flex">       //this class is used to add search bar.
+                <input class="form-control me-2" type="search" placeholder="Search">
+                <button type="button" class="btn btn-outline-success">Search</button>
+            </form>
+
+    Cards   ->  A card is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options.
+            <div class="card">          //will create a card
+            <div class="card-body">     //body of card
+            <h5 class="card-title">Nature</h5>  //title of card.
+            <p class="card-text">Text</p>       //text inside card.
+
+    Grid Layout    ->  Bootstrap’s grid system uses a series of containers, rows, and columns to layout and align content. It’s built with flexbox and is fully responsive.
+            By default in bootstrap each row is divided in 12 equal columns(it is 12 column system.)
+            For creating grid we must use container.
+            <div class="container">
+                <div class="row">
+                    
+                </div>
+            </div>
+
+            for distributing 2 column to item use (col-2)
+                <div class="col-4 bg-success">One</div>     //give 4 column to one
+                <div class="col-8 bg-danger">Two</div>      //give 8 column to Two
+
+            If we want to make our grid more responsive then we will use grid options.
+
+            Grid options    ->  Bootstrap’s grid system can adapt across all six default breakpoints, and any breakpoints you customize. The six default grid tiers are as follows:
+
+                Extra small (xs)
+                Small (sm)
+                Medium (md)
+                Large (lg)
+                Extra large (xl)
+                Extra extra large (xxl)
+
+            As noted above, each of these breakpoints have their own container, unique class prefix, and modifiers. Here’s how the grid changes across these breakpoints:
+
+                                                xs  	        sm  	    md  	    lg  	    xl  	    xxl 
+                                                <576px          ≥576px      ≥768px      ≥992px      ≥1200px     ≥1400px
+                       ---------------------------------------------------------------------------------------   
+                        Container 	            None (auto)	    540px	    720px	    960px	    1140px	    1320px
+                        (max-width) 
+
+                        Class prefix	        .col-	        .col-sm-	.col-md-	.col-lg-	.col-xl-	.col-xxl-
+
+                        # of columns	        12
+
+                        Gutter width	        1.5rem (.75rem on left and right)
+
+                        Custom gutters	        Yes
+
+                        Nestable	            Yes
+
+                        Column ordering	        Yes
+
+            Vertical Alignment(Grid)    ->  use class="align-items-start(center end)" to align item according to vertical axis.
+                                            use class="align-self-start(center, end)" to align a particular item basis of vertical axis.
+
+    Forms   ->  
+            i   -    Form controls  ->  Give textual form controls like<input>s and <textarea>s an upgrade with custom styles, sizing, focus states and more.
+                        to create a form use 
+                        <form class="mb-3">         //uses of these mb-3(margin-bottom, and 3 have its special meaning.) is used for spacing we can also give it to individual items. you can read the documentation.
+                            <label class="form-label"></label>
+                            <input class="form control">
+                        </form>
+                        we can also adjust the sizing by (form-control-lg(sm, md))
+
+            ii  -    Select ->  Custom <select> menus need only a custom class, .form-select to trigger the custom styles. Custom styles are limited
+                                to the <select>’s initial appearance and cannot modify the <option>s due to browser limitations.
+                                Used to create a dropdown.
+                                <select class="fom-select">
+
+            iii -    Checkbox & radio -> Checkboxes are for selecting one or several options in a list, while radios are for selecting one option from many.
+                        
+                        Checkbox  ->
+                          <div class="form-check">
+                            <label for="agree" class="form-check-label">Agree</label>
+                            <input type="checkbox" id="agree" class="form-check-input">
+                          </div>
+
+                          You can also disable this using disabled attribut inside input element.
+
+                          Radio ->
+                            <div class="form-check">
+                              <input type="radio" id="yes" class="form-check-input">
+                              <label for="yes" class="form-check-label">Yes</label>
+                            </div>
+
+                          Switch  ->  
+                            <div class="form-check form-switch">
+                              <input type="checkbox" class="form-check-input" id="switch">
+                              <label class="form-check-label" for="switch">Default switch checkbox</label>
+                            </div>
+
+            iv  -    Layout ->  Give your forms some structure—from inline to horizontal to custom grid implementations—with our form layout options.
+
+                            <div class="row">
+                              //put your form elements inside this div and your form element will be renderring inside a single row.
+                            </div>
+                                   
+            
