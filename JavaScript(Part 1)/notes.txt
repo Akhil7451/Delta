@@ -1,11 +1,8 @@
-                                            JAVASCRIPT
+JAVASCRIPT
 
-
-    *[PART-1]
-
-        It is a programming language.
-        Used to add functionality to our websites.
-        It is a case sensetive language.
+    It is a programming language.
+    Used to add functionality to our websites.
+    It is a case sensetive language.
 
 
     # Console
@@ -115,7 +112,7 @@
 
 
 
-        # OPERATIONS IN JS: {Binary}
+    # OPERATIONS IN JS: {Binary}
 
         -> We can write comments in JS by adding // to our sentence.
         
@@ -143,15 +140,15 @@
                 2**3=8
 
 
-        # NaN in JS
+    # NaN in JS
 
-            The NaN global property is a value representing Not-A-Number.
-            0/0 is not a valid number,therefore it is NaN.
+        The NaN global property is a value representing Not-A-Number.
+        0/0 is not a valid number,therefore it is NaN.
 
 
-            # OPERATOR PRECENDENCE:  [Like BODMAS]
+    # OPERATOR PRECENDENCE:  [Like BODMAS]
 
-            This is the general order of solving an expression.
+        This is the general order of solving an expression.
 
             ()
             **
@@ -159,22 +156,22 @@
             +,-
 
 
-        # ASSIGNMENT OPERATORS :
+    # ASSIGNMENT OPERATORS :
 
-            age= age+1     --> [age+=1]
+        age= age+1     --> [age+=1]
             
-            age=age-1      --> [age-=1]
+        age=age-1      --> [age-=1]
 
-            age=age*1      --> [age*=1]
+        age=age*1      --> [age*=1]
 
-            age=age/1      --> [age/=1]
+        age=age/1      --> [age/=1]
 
-            age=age%4      --> [age%=4]
+        age=age%4      --> [age%=4]
 
 
-        # UNARY OPERATORS:
+    # UNARY OPERATORS:
 
-            1. Post-increment(age++)        2. Post-decrement(age--)
+        1. Post-increment(age++)        2. Post-decrement(age--)
 
             use,then change
             age=age+1                      age=age-1
@@ -205,23 +202,23 @@
                 newNum= ++num;  newnum will be updated to 7 and num will be also 7.
 
         
-        # Identifiers Rules:
+    # Identifiers Rules:
 
-            -> All JS variables must be identified with unique names(identifiers).
+        -> All JS variables must be identified with unique names(identifiers).
 
-                let price
-                let price123
-                let price$
-                let price_
-                let price-  (this is not valid)
-                let old price(not valid)
+            let price
+            let price123
+            let price$
+            let price_
+            let price-  (this is not valid)
+            let old price(not valid)
 
-                1. Nmaes can contain letters,digits,underscoresand dollar signs.(no space)
-                2. Name must begin with letter/$/_.
+        1. Nmaes can contain letters,digits,underscoresand dollar signs.(no space)
+        2. Name must begin with letter/$/_.
 
-                let age
-                let _age
-                let $age
+            let age
+            let _age
+            let $age
 
         3. Name cannot begin with a number.
 
@@ -233,44 +230,43 @@
             like  let,const,var,etc.
 
 
-        #  camelCase: Way of writting identifiers.
+    #  camelCase: Way of writting identifiers.
 
-            camelCase    -> let fullName   (prefer this for JS)
-            snake_case   -> let full_name
-            PascalCase   -> let FullName
+        camelCase    -> let fullName   (prefer this for JS)
+        snake_case   -> let full_name
+        PascalCase   -> let FullName
 
 
-        Ques- What is typescript?
-            Ans-
-            -->  It is a next version of JS, that is used in numerous companies.
-            -->It is static typed{once a specific kind of variable is     defined with a specific data type,it cannot be changed later. } where as JS is dynamic typed {variable data type can be changed}.
-            --> TS is designed by Microsoft.
+    Ques- What is typescript?
+        Ans-
+        -->  It is a next version of JS, that is used in numerous companies.
+        -->It is static typed{once a specific kind of variable is defined with a specific data type,it cannot be changed later.} where as JS is dynamic typed {variable data type can be changed}.
+        --> TS is designed by Microsoft.
 
             * a=5 and a=10 are correct 
 
-            * but a=true would be wrong.  <-- This is valid in JS but       not in TS.
+            * but a=true would be wrong.  <-- This is valid in JS but not in TS.
 
 
-        # Practice Question :
-            ~ RULES=
+    # Practice Question :
+        ~ RULES=
 
-            * Our variables cannot start from a number.
-            ( let 1age= 5)  --> wrong
-            ( ket age1= 5)  --> correct
+        * Our variables cannot start from a number.
+        ( let 1age= )  --> wrong
+        ( ket age1= )  --> correct
 
-            * For boolean start from small letter.
-            let marks=75;
-            let ispass= True --> wrong
-                ispass= true --> Correct
+        * For bolean start from small letter.
+        let mark=75;
+        let ispas= True --> wrong
+        ispass= true --> Correct
+    
+        * let ispass='true'
+        here ispass is a boolean variable therefore quotes(''/"") should not be used, if used it will become a string datatype.
 
-            * let ispass='true'
-            here ispass is a boolean variable therefore quotes(''/"") should not be used, if used it will become a string datatype.
 
 
+    # String Indices:
 
-        # String Indices:
-
-        
         -> Whatever string we create in JS, each letter is assigned with a index(position) internaly .
 
             let name='TONY STARK'
@@ -306,39 +302,33 @@
                 a
 
         
-            --> Length of an empty string = 0
-                    let empty="";
-                    empty.length
-                    0
+        --> Length of an empty string = 0
+                let empty="";
+                empty.length
+                0
 
-            --> Length of a single space =  1
-                    let space= " ";
-                    space.length
-                    1
-
-
-
-        # Concatenation: Combining multiple strings together.
-
-            "Tony"+"stark"
-            'Tonystark'
-
-
-            let firstname='tony'
-            let lastname="stark"
-            let fullname= firstname+lastname
-            fullname
-            'tonystark'
-
-            let fullname= firstname +" "+ lastname
-            fullname
-            'tony stark'
-
-            "tony"+1
-            'tony1'
+        --> Length of a single space =  1
+                let space= " ";
+                space.length
+                1
 
 
 
+    # Concatenation: Combining multiple strings together.
+
+        "Tony"+"stark"
+        'Tonystark'
 
 
+        let firstname='tony'
+        let lastname="stark"
+        let fullname= firstname+lastname
+        fullname
+        'tonystark'
 
+        let fullname= firstname +" "+ lastname
+        fullname
+        'tony stark'
+
+        'tony1'
+        "tony"+1
