@@ -1,0 +1,334 @@
+JAVASCRIPT
+
+    It is a programming language.
+    Used to add functionality to our websites.
+    It is a case sensetive language.
+
+
+    # Console
+
+        This is used for practice and temporary codes =, we can't save it.
+        It uses REPL(Read Evaluate Print Loop) concept.
+
+        i-   it reads whatever we write.
+        ii-  it calculate or compute.
+        iii- print.
+        iv-  it repeats the same again.
+
+        To clear console window ,press(ctrl+L).
+
+
+        Ques- What is variable??
+        Ans- A variable is simply the name of storage location.
+            They are like containers.
+
+
+    # DATA TYPES IN JS:
+
+        In this kanguage we do not need to define our data type.but in c,c++,java,we need to tell the data type.
+
+        1. Primitive Types(7)=
+
+
+            i.   Number:
+
+                ->  positive and negative values.
+                ->  Integers(32,-8)
+                ->  Floating numbers(4.6,-8.9)
+
+                Every variable has limited memory.We can't type infinite numbers.
+                When limit is exceeded, the number is rounded of to it's nearest integer.
+
+
+            ii.  Boolean: It represents a truth(true or false / yes or no) value.
+
+                let age=23;
+                let isadult= true;
+            
+                let age=13;
+                let isadult= false;
+
+                ** We can change the datatype in JS by simply changing its value =
+
+                    let a=5;   --> number
+                    let a= true;  --> boolean 
+
+            iii. String:
+
+                -> Strings are text or sequence of characters.
+                -> Used when we want to display word or a paragraph.
+                -> strings are written either in double or singlequotes.
+                    
+                * let firstname="tony"
+                * let char='a
+                    typeof char
+                    'string'
+
+                -> Every character is allowed in string (space also).
+
+                * let str="nvrv bdhwE78@#%^78&IFHW VBWJNWIOE"
+
+                --> We can also make a number a string by wwritting it in quotes. 
+
+                *   let num='123  
+                    typeof num
+                    'string'
+                    num
+                    '123'
+
+                --> We can also define a empty string(""/'')as valid string.
+                *   let emp=""
+                    typeof emp
+                    'string'
+
+                --> If we want to print anything inside quotes, then use diff. quotes for writting your main string other than used on your word.
+                *   let sentence='this is "apple"'
+                    sentence
+                    'this is "apple"'      [Reverse is also possible]
+
+            iv.  Undefined:  A variable that has not been assigned a value is of undefined type.
+
+                --> let name;
+                    undefined
+                    typeof name
+                    'undefined'
+            
+                --> name="apnacollege"
+                    'apnacollege'
+                    name[100]
+                    undefined
+
+            v.   Null:  The null value represents intentional absence of any object value.
+                 Mull is a keyword in JS. 
+
+                let a=null;
+                undefined
+                a
+                null
+
+            vi.  Bigint:
+
+            vii. Symbol:
+
+
+
+    # OPERATIONS IN JS: {Binary}
+
+        -> We can write comments in JS by adding // to our sentence.
+        
+            a=10  ( a and b are operants)
+            b=20  ( +,-,*,/ are operators)
+                  ( = is known as assignment operator)
+
+            //addition
+                sum=a+b
+
+            //subtraction
+                diff+a-b
+
+            //multiplication
+                mul=a*b
+            
+            //division
+                div+a/b
+
+            //Modulo(remainder operator)
+                used for finding the remainders.
+                12%5=2(this is remainder)
+
+            //Exponentation(power operator)
+                2**3=8
+
+
+    # NaN in JS
+
+        The NaN global property is a value representing Not-A-Number.
+        0/0 is not a valid number,therefore it is NaN.
+
+
+    # OPERATOR PRECENDENCE:  [Like BODMAS]
+
+        This is the general order of solving an expression.
+
+            ()
+            **
+            *,/,%
+            +,-
+
+
+    # ASSIGNMENT OPERATORS :
+
+        age= age+1     --> [age+=1]
+            
+        age=age-1      --> [age-=1]
+
+        age=age*1      --> [age*=1]
+
+        age=age/1      --> [age/=1]
+
+        age=age%4      --> [age%=4]
+
+
+    # UNARY OPERATORS:
+
+        1. Post-increment(age++)        2. Post-decrement(age--)
+
+            use,then change
+            age=age+1                      age=age-1
+            age+=1                         age-=1
+            age++//incement operator       age--//decrement operator
+
+            let age= 10;
+                newage= age++
+
+            age=10;
+            newage= 10
+            then now age= 11
+        
+
+        3. Pre-increment(++age)       4. Pre-decrement(--age)
+        
+            Value changes,then use.
+            
+            let age=10;
+            let newage=++age;
+            
+            eg: age=10--> 11
+                new age= 11
+
+            Ques- What is the value of each variable in each line of code?
+            Ans- let num= 5;      
+                let newnum= num++; newnum-->5 and num will be updated to -->6
+                newNum= ++num;  newnum will be updated to 7 and num will be also 7.
+
+        
+    # Identifiers Rules:
+
+        -> All JS variables must be identified with unique names(identifiers).
+
+            let price
+            let price123
+            let price$
+            let price_
+            let price-  (this is not valid)
+            let old price(not valid)
+
+        1. Nmaes can contain letters,digits,underscoresand dollar signs.(no space)
+        2. Name must begin with letter/$/_.
+
+            let age
+            let _age
+            let $age
+
+        3. Name cannot begin with a number.
+
+            let 1age (not valid)
+
+        4. Nmaes are case sensitive (y and Y are diff. variables).
+
+        5. Reserved words(like JS keywords) cannot be used as names.
+            like  let,const,var,etc.
+
+
+    #  camelCase: Way of writting identifiers.
+
+        camelCase    -> let fullName   (prefer this for JS)
+        snake_case   -> let full_name
+        PascalCase   -> let FullName
+
+
+    Ques- What is typescript?
+        Ans-
+        -->  It is a next version of JS, that is used in numerous companies.
+        -->It is static typed{once a specific kind of variable is defined with a specific data type,it cannot be changed later.} where as JS is dynamic typed {variable data type can be changed}.
+        --> TS is designed by Microsoft.
+
+            * a=5 and a=10 are correct 
+
+            * but a=true would be wrong.  <-- This is valid in JS but not in TS.
+
+
+    # Practice Question :
+        ~ RULES=
+
+        * Our variables cannot start from a number.
+        ( let 1age= )  --> wrong
+        ( ket age1= )  --> correct
+
+        * For bolean start from small letter.
+        let mark=75;
+        let ispas= True --> wrong
+        ispass= true --> Correct
+    
+        * let ispass='true'
+        here ispass is a boolean variable therefore quotes(''/"") should not be used, if used it will become a string datatype.
+
+
+
+    # String Indices:
+
+        -> Whatever string we create in JS, each letter is assigned with a index(position) internaly .
+
+            let name='TONY STARK'
+            
+            T O N Y   S T A R K
+            0 1 2 3 4 5 6 7 8 9
+            
+            -> As index starts from 0, therefore this kind of indexing is known as "0 based indexing".
+            -> JS, Java,C++ follow 0 based indexing.
+            -> We can access indiviual character of a string with the help of indexing.
+            
+            * variable name[index]
+            name[0]
+            'T'
+            name[4]
+            ' '
+        -> We can also print the length of our string.
+        
+            * Variable name.length    [Here length is a property]
+            name.length
+            10
+            typeof name.length
+            'number' 
+            name[name.length-1]
+            'K'
+
+            * 'string'.length
+            'shradha'.length
+                7   
+
+            * 'String'[index]
+            'Shradha'[6]
+                a
+
+        
+        --> Length of an empty string = 0
+                let empty="";
+                empty.length
+                0
+
+        --> Length of a single space =  1
+                let space= " ";
+                space.length
+                1
+
+
+
+    # Concatenation: Combining multiple strings together.
+
+        "Tony"+"stark"
+        'Tonystark'
+
+
+        let firstname='tony'
+        let lastname="stark"
+        let fullname= firstname+lastname
+        fullname
+        'tonystark'
+
+        let fullname= firstname +" "+ lastname
+        fullname
+        'tony stark'
+
+        'tony1'
+        "tony"+1

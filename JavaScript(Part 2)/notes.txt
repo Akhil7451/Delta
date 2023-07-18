@@ -1,0 +1,311 @@
+# Console.log() :
+    To write(log) message on the console.
+    It is a method of linkinng JS file from the console of our browser.
+
+    *  console.log("hello")
+        hello
+ 
+    * console.log(variable name)
+    let num=123;
+    console.log(num)
+    123
+
+    -> We can also print operations.
+
+        console.log(1+2)
+        3
+
+    *  console.log("hello","world",num,(1+4))
+        hello world 123 5
+
+
+
+# Linking of JS file:
+
+   <script src="index.js"></script>
+   This script tag is written just before the ending body tag.
+
+# Template Literals: [ `string ${variable} `]
+
+  They are used to add embedded expressions in string.
+
+  let a=5;
+  let b=10;
+  console,log('your pay $(a+b) rupees');
+
+
+# Operators in JS :
+
+    1. Arthemetic : (+,-,*,/,%,**)
+
+    2. Unarry : (++,--) sing
+
+    3. Assignment operators : (=, +=,*=,-=,/=,%=,etc.)
+
+    4. Comparison operators :
+    
+    To compare two values.
+    (<,>=,>,<=,=={equals to operator},!={not equals to operator} )
+
+        let age=18
+        console.log(age>18)
+        false
+        console.log(age>=18)
+        true
+
+    --> equals to operator only compare the value,not the data type.
+        
+        let n=5                *  "123"==123
+        let str='5'               true
+        typeof n               *  0=''
+        'number'                  true
+        typeof str             * null== undefined
+        'string'                 true
+            *  n==str
+                true
+            *  4!=str
+                true
+
+
+    --> To compare both type and value ,we use (===) operator.
+
+        n===str             *  "123"===123
+        false                   false
+                            *   0===''
+                                false
+                            *  null===undefined
+                                false
+
+
+# Comparison for Non-numbers:
+
+
+    -> Every character has its unique unicode.
+    -> There unicodes are compared.
+   
+    * Unicodeds value =
+
+        a<b<c<d.....
+        A<B<C<D.....
+        [ Uppercase < Lowercase]
+
+    -> We can also compare *,$,%,tec.
+
+        * 'a'<'A'   'a'->61  'b'->62
+            false   'A'->41  'B'->42
+        
+        * 'a'<'b'
+            true
+
+
+# Conditional statements :
+
+
+    1. If-else :
+    
+    2. nested if-else :
+
+    3. switch :
+
+
+
+    1. if statement :  (here if is a keyword)
+
+
+        // some code before if
+
+        if(some condition){
+        
+        // DO SOMETHING
+
+            }
+        // some code after if
+
+        here condition can be either true or false.
+
+        let age=19
+        age>=19    -->(condition)
+        let marks=63
+        if( marks=50){
+            console.log("pass")
+        }
+        console.log("after my if statement");
+
+    * On console window,pass will be printed.
+    * If, statement wriiten in if is false, therfore nothing will be printed.
+
+    let firstname="akhil"
+    if(firstname="akhil"){
+        console.log(`welcome ${firstname}`)
+    }
+
+
+    2. else if statement :
+
+        if(Condition1){
+            // DO SOMETHING
+        }
+        else if(Condition2){
+            // DO SOMETHING ELSE
+        }
+        else if(Condition3){
+            // DO SOMETHING ELSE
+        }
+                                                                          
+
+                          
+        Example: grading system, season,etc.
+
+
+        let price=114
+        if(price>=100){
+            console.log("It is expensive ")
+        }
+        else if( price<100){
+            console.log(" It iss cheap")
+        }
+
+
+    3. Else statement :  This is used when all of the above statements are wrong.
+ 
+
+        if(condition1){
+            //DO SOMETHING
+        }
+
+        else{
+            //DO SOMETHING
+        }
+
+
+        Example:
+
+        let number=50;
+        if(number>=50){
+            console.log("You scored good")
+        } else{
+            console.log("You need improovement")
+        }
+
+
+
+    4. Nested if-else : Nesting is writing if-else statements.
+            It can have levels.
+
+
+
+
+# LOGICAL OPERATORS : logical operators to combine expressions.
+
+    There are three types of logical operators :
+
+    1. Logical AND (&&)= Used to combine two expressions.
+                        (exp1)&&(exp2)
+                        true&& true
+                        true
+                        true&&false
+                        false
+                        false&&true
+                        false
+                        false&&false
+                        false
+
+        Example :   (5>3)&&(6<2)
+                    false
+
+
+    2. Logical OR (||)=
+
+                    true||true
+                    true
+                    true||false
+                    true
+                    false||true
+                    true
+                    false||false
+                    false
+
+    3. Logical NOT(!)=  
+
+                    !true
+                    false
+                    !false
+                    true  
+
+        Example :
+                    !(5<3)
+                    true 
+
+    --> When we combine multiple logical operators, then they are excuted from left to right.
+
+
+# TRUTHY AND FALSY :      
+ 
+    -> Everything in JS is true or false(in boolean context).
+    -> This doesnot mean their value itself is false or true, but they are treated as false or true if taken in boolean context.   
+
+
+    * Falsy values : false, 0,-0,On(bright value),""(empty string),null,undefined,NaN.
+
+    * Truthy value : Everything else.    
+
+
+
+
+# SWITCH STATEMENT :  Used when we have some fixed values that we need to compare to. 
+
+    let color="red";
+
+    switch(color){
+    case"red" :   
+        console.log("stop");
+        break;
+    case"yellow" :
+        console.log("slow down");
+        break;
+    case"green" :
+        console.log("Go");
+        break;
+    default :
+        console.log("Broken light");
+    }
+
+
+
+# ALERT AND PROMPTS :
+
+    1. Alert : displays an alert message on the page.
+
+        alert("something is wrong! ")
+
+    2. Prompt : displays a dialog box that asks user for some input.
+    
+        prompt("Enter your name")
+
+
+    let firstName= prompt("Enter your name");
+    console.log(firstName);
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+
+ 
+
+ 
+
+
+                                                                                                                   
+                                                                                             
+                                                                                    
+
+                        
+                                                             
+                             
+                                        
+                                                                                                  
+                   
+                        
+                                               
+                                                            
+                                                                                
+                                                                                                    
