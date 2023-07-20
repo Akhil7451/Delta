@@ -1,0 +1,67 @@
+String Methods
+
+    Method  -   actions that can be performed on objects.
+                stringName.method();
+
+        i   -   str.trim()
+                Trims whitespaces from both ends of string & returns a new one.
+                    stringName.trim();
+        
+        ii  -   str.toUpperCase()   //STRING
+        iii -   str.toLowerCase()   //string
+
+String Methods with Arguments   -   Arguments is some value that we pass to the method.
+                stringName.method(arg)  // arg -> Arguments
+
+        i   -   indexOf()   -   return first index of occurence of some value you passed as an argument, if not found will give -1.
+                                stringName.indexOf("a");
+
+        ii  -   slice()     -   returns a part of the original string as a new string.
+                                stringName.slice(5);    // 
+
+        iii -   replace()   -   searches a value in the string & returns a new string with the value replaced.
+                                    stringName.replace("love", "do")    // "IloveCoding"   -   "IdoCoding"
+
+        iv  -   repeat()    -   returns a string with the number of copies of a string.
+                                stringName.repeat()     // "MangoMangoMango"
+
+Array (Data Structure)  
+        Linear collection of things. Arrays are object types.
+        let student1 = ["akhil", "akshat", "amit", "hatya", "aditya"]
+
+        Visualizing Array       -       we can also create mixed array this can be done onky with js
+                                        let info = ["Akhil", 23, 89.9];
+
+                                        info.length();  // to find the length of array.
+                                        info[1];        // print the valye of index 1
+                                        info[0][0];     // first [0] will gives the string of array and 2nd [0] print the 0th index value of that string which is at oth index.
+        Arrays are Mutable      -       we can change array according to our requirement.
+                        let fruits = ["mango", "apple", "litchi"];
+                        fruits[0] = "banana";   // ["banana", ]
+
+        Array Methods   -       
+                i       -       .push();        ->      add an element to end of an array.
+                ii      -       .unshift();     ->      adds elements at beginning of an array and
+                iii     -       .pop();         ->      delete an element from end & return it.
+                iv      -       .shift()        ->      delete from start & return it.
+                v       -       .indexOf()      ->      return index of something.
+                vi      -       .includes()     ->      search for a value if value exists or not.
+                vii     -       .concat()       ->      merge 2 arrays.
+                viii    -       .reverse()      ->      reverse an array.
+                ix      -       .slice()        ->      copies a portion of an array.
+                x       -       .splice()       ->      modify/delete parts of an array by adding
+                                                        in this we have three arguments splice(start, deleteCount, item0...itemN).
+                                                        here start is for index from which you want to start deleting the element,
+                                                        deleteCount is for count how many items you want to delte.
+                                                        item0...itemN is for adding an element to the index we mentioned in start.
+                xi      -       .sort()         ->      sort the array.
+        
+        Array References        -       array references are basically the address of arrays. What all changes we will made in array,
+                                        it will reflect in all its references arrays.
+        
+        Constant Arrays         -       when we make array constant we can only change or perform operations on that aray but cannot
+                                        add a new array to that array.  
+                                        const arr = [1, 2, 3, 4];
+
+        Nested Arrays           -       array of arrays. Also known as multidimensional array.
+                                        let num = [[2, 4], [3, 6], [4, 8]];
