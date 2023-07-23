@@ -1,0 +1,44 @@
+Loops   -   Used to iterate a piece of code.
+    
+    -   for Loops    -  To loop through each element in an iterable object.
+            
+            Syntax: for(initialisation; condition; updation) {
+                        //code block
+                    }
+
+    -   Nested for Loops    -   Loops inside a loop.
+
+            Syntax: for(initialisation; condition; updation) {
+                        //nested loop
+                        for(initialisation; condition; updation) {
+                            //code block
+                        }   
+                    }
+
+    -   while loop  -  
+
+            Syntax: while(condition) {
+                        //do something
+                    }
+
+    -   break keyword   -   to stop the loop when the condition reached.
+
+Loops with Arrays   -   loops to iterate in arrays or to perform function with arrays.
+
+    -   Nested Loops with Nested Arrays -   loops to iterate in nested arrays.
+    
+For of Loop -   used when we want to access the items of collection.
+
+            Syntax: for(element of collection) {
+                        //do something
+                    }
+
+Nested for of Loop  -
+
+            Syntax: for(element of collection) {
+                        for(element of element) {
+                            //do something
+                        }
+                    }
+
+    
