@@ -1,0 +1,90 @@
+JS Objects Literals -   Used to store keyed collections & complex entities.
+
+                        property => (key, value) pair
+                        Objects are a collection of properties.
+                        In object literals data is not stored in order how we entered.
+
+                    Syntax: const student = {
+                                name: "Akhil",
+                                age: 21,
+                                marks: 75,
+                                city: "Delhi"
+                            };
+
+    Get Values  -   how to access the value of object.
+                
+                const objectName = {
+                    key: value
+                    key: value,
+                    key: value,
+                    key: value
+                    key: value
+                };
+
+                object["key"]; OR object.key;    //to access any key of object.
+
+        Conversion in Get Values    -   JS automatically converts object keys to string
+                                        Even if we made the number as a key, the number will be converted to string.
+
+    Add/Update Values   -   To add or update the value of key.
+                
+            object.key = value;     //if key is already exists then it will update if not then will add  a new
+            delete object.keyName;      // to delete any key-value from object.
+
+    Object of Objects   -   Storing information of multiple students.(nested objects).
+
+            const objectInfo = {
+                object1 : {
+                    key: value,
+                    key: value
+                },
+                object2 : {
+                    key: value,
+                    key: value
+                },
+                object3 : {
+                    key: value,
+                    key: value
+                }
+            };
+
+    Array of Objects    -   Storing array of objects.
+                            In this you can access the object via index number.
+                            All methods are same as array.
+
+            const objectInfo = [
+                {
+                    key: value,
+                    key: value
+                },
+                {
+                    key: value,
+                    key: value
+                },
+                {
+                    key: value,
+                    key: value
+                }
+            ];
+
+    Math Object -   Is an existing object in js it is a collection of methods.
+
+            Properties
+
+            Math.PI         Returns Pi (π) constant and its approximate value for 5 decimal places using M
+            Math.E          E constant.
+
+            Methods
+
+            Math.abs(n)     -   Return the absolute value(negative to positive)
+            Math.pow(a, b)  -   Return the power(a to the power b)
+            Math.floor(n)   -   Return the round off of the number and return the number less then n.
+            Math.ceil(n)    -   Return the smallest integer greater than or equal to x.
+            Math.random()   -   Return  the random value everytime.
+                                to generate a random number between the range 1-10 (Math.floor(Math.random() * 10))
+ 
+    
+
+
+
+                

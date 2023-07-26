@@ -1,0 +1,142 @@
+Functions in JS
+
+        Function Definition(telling JS)
+
+            function funcName() {
+                //do something
+            }
+
+        Function Calling(Using the function)
+
+            funcName();
+
+        Functions with Arguments    -   Values we pass to the function.
+
+            function funcName(arg1. arg2...) {
+                //do something
+            }
+
+            funcName(value1, value2...);
+
+        Return Keyword  -   return keyword is used to return some value from the function.
+
+            input   ------>     Function    ------>     output
+
+            function funcName(arg1, arg2...) {
+                //do something
+                return val;
+            }
+
+            let var = funcName(value1, value2);
+            console.log(var);
+
+            whatever written after return will not execute.
+
+        Scope   -   Scope determines the accessibility of variables, objects, and functions, from different parts.
+
+            ->  Function    -   Variables defined inside a function are not accessible(visible) from outside the function.
+                                We can also create a variable with the same name outside the function.
+                                If there is a global variable with the same name of variable present in s function, when we
+                                use that variable which have same name varable which is inside function will execute.
+
+                    function funcName() {
+                        let var = 0;        //can not used outside this function. 
+                    }
+
+            ->  Block   -   variables defined inside a block will not be accessed outside the blocks.
+
+                    {
+                        let var = 0;    //block variable.
+                    }
+
+                            block scope is only applied for let and const, not on variable declared using var keyword.
+
+                    {
+                        var num = 1;        //can be accessed outside block.
+                    }
+
+            ->  Lexical -   a variable defined outside a function can be accessible inside another function defined after a variable declaration.
+                            also inner function can called outside outerfunction.
+
+                    function funcName() {
+                        let a = 0;
+                        function funcName() {
+                            console.log(a);
+                        }
+                    }
+
+            ->  Global  -   Variables which are defined outside the function this variable we can use in any line of our code. 
+
+                    let var = 0;            //global variable.
+                    function funcName() {
+                        //do something
+                    }
+
+        Function Expressions    -   is also a way to define a function in this we create a function but inside a variable these function are usually nameless.
+                                    these function's are stored inside a variable.
+                                    we can call these function with the name of variable.
+                                    we can perform all the functions which we can perform with variables.
+
+            const variable = function(arg1, arg2...) {
+                //do something
+            }
+
+            variable(value1, value2);
+
+        High Order Functions    -   A function that does one or both.
+                                        ->  takes one or multiple functions as arguments.
+
+                                                function multipleGreet(func, n) {
+                                                    for(let i=1; i<=n; i++) {
+                                                        func();
+                                                    }
+                                                }
+                                                let greet = function() {
+                                                    console.log("hello");
+                                                }
+                                                multipleGreet(greet, 2);
+
+                                        ->  returns a function.
+                                                
+                                                function oddEVenTest(request) {
+                                                    if(request == "odd") {
+                                                        return function(n) {
+                                                            console.log(!(n % 2 == 0));
+                                                        }
+                                                    } else if(request == "even") {
+                                                        return function(n) {
+                                                            console.log(n % 2 == 0);
+                                                        }
+                                                    } else {
+                                                        console.log("Wrong request");
+                                                    }
+                                                }
+                                    
+        Methods -   Actions that can be performed on an object.
+                    function defined inside objects knoes as mehtods.
+
+                        const calculator = {
+                            add: function(a, b) {
+                                return a + b;
+                            },
+                            sub: function(a, b) {
+                                return a - b;
+                            },
+                            mul: function(a, b) {
+                                return a * b;
+                            }
+                        };
+
+                    Shorthand - // Shorthand for methods in this you don't have to write function .
+
+                        const calculator = {
+                            add(a, b) {
+                                return a + b;
+                            },
+                            sub(a, b) {
+                                return a - b;
+                            },
+                            mul(a, b) {
+                                return a * b;
+                            }
+                        };     
