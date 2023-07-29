@@ -1,0 +1,68 @@
+this Keyword    -   "This" keyword refers to an object that is executing the current piece of code.
+                    Methods in our object can not directly access the perameters of that object.
+                    Scope for this keyword in normal function calling object.
+
+                       const student = {
+                            name: "Akhil",
+                            age: 22,
+                            eng: 95,
+                            math: 93,
+                            phy: 97,
+                            getAvg() {
+                                let avg = (this.eng + this.math + this.phy) / 3;
+                                console.log(`Average of 3 subjects is ${avg}.`);
+                            } 
+                        }
+                        console.log(student.getAvg());
+
+try & catch     -   The try statement allow you to define a block of code to be tested for errors while it is being executed.
+                    The catch statement allows you to define a block of code to be executed, if an error occurs in the try block.
+
+                        try {
+                            console.log(a);
+                        } catch {
+                            console.log("varibale a doesn't exist);
+                        }
+
+Miscellaneous Topics    ->
+    ->  Arrow Function  -   it is also a method to write function. These functions are used as variables. These are nameless functions.
+
+                                const func = (arg1, arg2...) => {function definition};
+
+                                const sum = (a, b) => {
+                                    console.log(a + b);
+                                }
+
+        Implicit return -   in this function nothing will do only it will return the value.
+
+                                const func = (arg1, arg2...) => {value};
+
+                                const mul = (a, b) => (
+                                    a * b
+                                );
+
+        Set Timeout     -   It is an inbuilt function of window object. It sets a timer for our work. It takes time in ms so if we want to set time for 4s we have to write 4000.
+                            
+                                setTimeout(function, timeout)
+
+                                console.log("hi there!");
+                                setTimeout( () => {
+                                    console.log("Apna College");
+                                }, 4000);
+                                console.log("welcome to");
+
+        Set Interval    -   It is an inbuilt function of window object. It sets a interval of time for our work. It takes time in ms so if we want to set time for 2s we have to write 2000.
+                            But it executes continuosly after the given interval of time. Untill we stops it.
+
+                                setInterval(function, interval)
+
+                                let id = setInterval(() => {
+                                    console.log("Apna College");
+                                }, 2000);
+
+                                //To stop 
+                                
+                                clearInterval(id);
+
+    this with Arrow functions   -    Scope for this keyword in arrow function is the scope of its parent object. It will inherit the scope of its parent.
+                                
