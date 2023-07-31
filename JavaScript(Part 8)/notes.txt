@@ -1,0 +1,77 @@
+Array Methods   -   
+
+    ->  forEach -   is used to iterrate inside an array.
+                    we can also use our forEach for our objects.
+                        arr.forEach(some function definition or name);
+
+    ->  map     -   map will perform function on each element and make a new array of output for those elements.
+    
+                        let newArr = arr.map(some function definition or name);
+
+    ->  filter  -   it will return a new array and add elements in that if function gives true for that element if false than it will not add that element to array.
+    
+                        let newArr = arr.filter(some function definition or name);
+
+    ->  every   -   return true if every element of an array gives true for some function. Else return false.
+
+                        let newArr = arr.every(some function definition or name);
+
+    ->  some    -   return true if any of the element of array gives true, else return false.
+
+                        let newArr = arr.some(some function definition or name);
+
+    ->  reduce  -   reduces the array to a single value.
+
+                        let newArr = arr.reduce(reducer function with 2 variables for (accumulator, element));
+
+Default Parameters  -   Giving a default value to the arguments. But we can not set first parameter as default. So always use your default parameter at the end.
+
+                            function func(a, b = 2) {
+                                //do something
+                            }
+Spread      -   Expands an iterable into multiple values.To print individually(apnacollege => a p n a c o l l e g e)
+
+                    function func(...arr) {
+                        //do something
+                    }
+
+    Spread with array Literals  -   Used to make a copy. Or if we spread an string array it will add all characters individually in a new array.
+                                    Also we can spread 2 different arrays at the same time.
+
+                                        let arr1 = [1, 2, 3, 4];
+                                        let arr2 = [5, 6, 7, 8];
+                                        let spreadArray = [...arr1, ...arr2];
+
+    Spread with Object Literals -   let data = {
+                                        email: "abc@gamil.com",
+                                        password: 'abcd',
+                                    };
+                                    let dataCopy = {...data, id: 123};
+                    
+Rest        -   Allows a function to take an indefinite number of arguments and bundle them in an array.
+                Here argument works as an array but it's not an array.So we cant perform array functions on argument. 
+
+                    function sum(...args) {
+                        return args.reduce((add, el) => add + el);
+                    }
+
+Destructuring   -   Storing values into multiple variable.
+
+    for arrays  -   Storing values of arrays into multiple variable.
+
+                        let names = ["akhil", "aditya", "amit", "akshat", "hatya"];
+                        let [winner, runnerup] = names;
+                        console.log(winner, runnerup);  //"akhil", "aditya"
+
+    for objects  -   Storing values of object into multiple variable.
+
+                        const student3 = {
+                            name: "akhil",
+                            age: 14,
+                            class: 9,
+                            subjects: ["hindi", "english", "maths", "science"],
+                            username: "akhil7451",
+                            pass: "abc"  
+                        };
+                        
+                        let {username, pass: password, city = "Noida"} = student3;    //use same variable as a key inside student3 object or else use like we used for password, if there is city then it will not change that or else create a key of name city for that object.
