@@ -1,0 +1,249 @@
+DOM(Document Object Model)
+
+    The DOM represents a document with a logical tree.
+    It allows us to manipulate/change webpage content (HTML elements).
+
+        <body>
+            <div>
+                <h1>Todo</h1>
+            </div>   
+            <ul>
+                <li>Eat</li>
+                <li>Code</li>
+                <li>Sleep</li>
+            </ul>
+        </body>
+
+        If we create a js for this html code than a tree like structure will formed with the help of nodes.
+            Here, each node is an object and has properties such as tag name, attributes etc.,
+            which can be manipulated using various methods provided by JavaScript API's or libraries.
+                        document
+                            |
+                           body
+                          /    \
+                        div    ul
+                        |     / | \
+                        h1   li li li
+
+            Temporary changes
+                                Use console.dir(document);  //to get every object of page.
+                                Use console.dir(document.all);  //to get every object of page using all collection.
+                                Use console.dir(document.all[indexno]);  //we can access the value of collection using index number.
+                                document.all[9].innerText = "Ironman";  //to change the value of innerHtml of propety at index no 9.
+
+    Changing an HTML using JS is a two step process - 
+
+        i   -   Select  -   we will select the element we want to change.
+
+                *   getElementById  -   get element by Id returns the elements  as an object or null(if not found).
+
+                            document.getElementById("id");  //this is not an element or id this is an object of id so we can store it in any variable.
+                            Step-by-step:
+
+                            let imgObj = document.getElementById("mainImg");    //create an object of mainImg id and store in imgObj.
+                            console.dir(imgObj);                                //to access all the propertiesof this object.
+                            imgObj.src = "new src";                             //to change the value of .
+
+                *   getElementByClassName   -   get element by ClassName returns the elements as an HTML collection or empty collection(if not found).
+
+                            let smallImages = document.getElementsByClassName("oldImg");    //create an HTML collection of className "oldImg"
+                            for(let i=0; i<smallImages.length; i++) {
+                                smallImages[i].src = "assets/spiderman_img.png";    //src of all three images are changed to the src of main image.
+                                console.dir(smallImages[i].src);
+                            }
+
+                *   getElementByTagName -   get element by TagName returns the elements as an HTML collection or empty collection(if not found).
+
+                            document.getElementsByTagName("p");                         //create an HTML collection of tag "p".
+                            document.getElementsByTagName("p")[1].innerText = "abc";    //change the inner text of p tag at index no 1 to "abc".
+            
+                *   Query Selectors -   Allows us to use any CSS selector.get element by TagName returns the elements as an NodeList or empty collection(if not found).
+
+                            document.querySelector('p');                    //Selects first p element.
+                            document.querySelectorAll('p');                 //Selects all p element.
+                            document.querySelector('.className');           //Selects first element that have class 'className'.
+                            document.querySelectorAll('.className');        //Selects all elements that have class 'className'.
+                            document.querySelector('#myId');                //Selects first element that have id 'myId'.
+
+        ii  -   Changing/manipulating  -   we will change the selected elements.
+
+                *   Using Properties & methods
+
+                    ->   innerText  -  Shows the visible text contained in a node.
+
+                            let para = document.querySelector("p");
+                            para.innerText = "I am Peter Parker.";      //change the text inside p.
+                            let heading = document.querySelector("h1");
+                            heading.innerText = "Iron Man";                          
+
+                    ->  textContent -   Shows all the full text as we entered inside code.
+
+                    ->  innerHTML   -   Shows the full markup what all elements we used inside that specific property.
+
+                            para.innerHTML = "I am <b>Peter Parker</b>" //change Peter Parker to bold.
+
+                            to apply any underline to the original value we use:
+
+                                let heading = document.querySelector("h1");
+                                heading.innerHTML = `<u>${heading.innerText}</u>`;
+
+                *   Manipulating Attruibutes  
+
+                    ->  obj.getAttriibute(atr)  -   it will give a attribute value for any specific object.
+
+                                for main img ->
+
+                                            let img = document.querySelector('img');
+                                            img.getAttribute('id');         //return the id of img -> 'mainImg'
+               
+                    ->  obj.setAttribute(attr, val) -   it will change the value of attribute.
+                                for main img ->
+                                    img.setAttribute('id', 'spidermanImg'); set new id of img to 'spidermanImg' and all the css applied to the id img.
+
+                                    also we can set class for our element.
+                                        let img = document.querySelector('img');
+                                        img.setAttribute('class', 'images');    //give .images as a class to #img element.
+
+                                    to change image src 
+                                        let img = document.querySelector('img');
+                                        img.setAttribute('src',"new src");
+
+                *   Manipulating style  -   to change style property.
+                                            in JS properties are in camelCase   (backgroundColor)
+
+                    ->  obj.style       -   changing style of h1 these chages are inline styles so not frequently used.
+                                            that's why we see that all properties are empty which we access using style.object
+
+                                                let heading = document.querySelector("h1");
+                                                heading.style.color = 'purple';     //text color will change to purple.
+                                                heading.style.backgroundColor = 'yellow';   //change bgcolor to yellow.
+
+                                            changing the color of anchor tag
+
+                                                let links = document.querySelectorAll('.box a');
+                                                //loops to change the color of every link to yellow.
+                                                for(let i=0; i<links.length; i++) {
+                                                    links[i].style.color = "yellow";
+                                                }
+
+                                                OR 
+
+                                                for(link of links) {
+                                                    links.style.color = "yellow";
+                                                }
+
+                    ->  using classList -   obj.classList
+
+                                        classList.add()         //to add new classes
+
+                                            add this properties to .css
+
+                                                .green {
+                                                  color: green;
+                                                }
+
+                                            than add this classList with the help of JS
+
+                                                let heading = document.querySelector("h1");
+                                                heading.classList.add("green");
+
+                                        classList.remove()      //to remove 
+                                        
+                                                heading.classList.remove("green");
+
+                                        classList.contains()    //to check if class exists
+
+                                                heading.classList.contains("green");
+
+                                        classList.toggle()      //to toggle between add & remove
+
+                                                Its function is to add a class if doesn't exists and remove if it exists.
+
+                                                    heading.classList.toggle("green");
+
+    Navigation  -   with the help of navigation we goes from one element to another.
+
+        i   -   parentElement   ->  it will access the parent element of the given element.
+                                    line no 29  -   h4 element
+
+                                        let h4 = document.querySelector("h4");
+                                        h4.parentElement;
+
+        ii  -   children        ->  it will access the child element of the given element if exists.
+
+                                    line 28 - div
+
+                                        let div = document.querySelector(".box");
+                                        div.children;
+                                        div.childElementCount;
+
+        iii -   previousElementSibling/nextElementSibling   ->  it will access the previous or next siblings element of the given element if exists.
+
+                                    line no 29  -   h4 element
+                                        let h4 = document.querySelector("h4");
+                                        h4.nextElementSibling;
+
+                                    line no 30 - ul element
+                                        let ul = document.querySelector("ul");
+                                        ul.previousElementSibling;
+                                    
+                                    change the h1 tag color to green 
+                                        let img = document.querySelector("#mainImg");
+                                        img.previousElementSibling.style.color = "green";
+
+    Adding Elements -   with this we can add new element to our document.
+                
+            document.createElement("p");        //create an p element in our document.
+                    
+                #created
+                    let newpara = document.createElement('p');
+                    newPara.innerText = "Hi this is a new paragraph element.";
+
+                #inserting to our document  ->  we cannot make a copy of element it is only added at once we can only change its position.
+
+                    i   -   appendChild(element);   ->  this will add this newPara as a child of that element.
+
+                                let body = document.querySelector("body");
+                                body.appendChild(newPara);      //this will create a newPara element as a child of body class at the end.
+
+                    ii  -   append(element);    ->  this will add this newPara, or (add a string to newPara ) as a child of that element. Mostly used.
+
+                                let box = document.querySelector(".box");
+                                box.append(newPara);        //add a newPara as a child.
+
+                                newPara.append("this is new text");     //add a new text to newPara (Hi this is a new paragraph element.This is new text).
+
+                    iii -   prepend(element);   ->  will add newPara at first/starting.
+
+                                let box = document.querySelector(".box");
+                                box.prepend(newPara);        //add a newPara as a child but in starting.
+
+                                newPara.prepend("this is new text");     //add a new text to newPara (This is new textHi this is a new paragraph element.).
+
+                    iv  -   insertAdjacentElement(where, element); ->  with this we can add where we want to add.
+
+                                *   'beforebegin'   -   Before the targetElement itself.
+
+                                                            box.insertAdjacentElement('beforebegin', newPara);
+
+                                *   'afterbegin'    -   Just inside the targetElement, before the first child.
+
+                                                            box.insertAdjacentElement('afterbegin', newPara);
+
+                                *   'beforeend'     -   Just inside the targetElement, after the last child.
+
+                                                            box.insertAdjacentElement('beforebend', newPara);
+
+                                *   'afterend'      -   After the targetElement itself.
+
+                                                            box.insertAdjacentElement('afterend', newPara);
+
+                #Removing Elements  ->  Remove element from our document.
+
+                    i   -   removeChild(element)    ->  remove the child element of the targetElement
+
+                                                            box.removeChild(newPara);
+
+                    ii  -   remove(element)         ->  remove element acts like append  it removes the targetElement or a string or text from a text.
+
+                                                            newPara.remove();
