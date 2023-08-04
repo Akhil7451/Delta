@@ -1,0 +1,161 @@
+DOM Events  -   Events are signals that something has occured. (user inputs / actions)
+
+    *   Inline Events   -   we use onclick="" attribute for inline event.
+
+                <button onclick="console.log('button was clicked')" >Click me</button>  //on clicking the button msg will be printed on console window.
+
+                we can add more than one console.log in same "". 
+
+                    <button onclick="console.log('button was clicked'); console.log('apna college')" >Click me</button>  //on clicking the button msg will be printed on console window.
+
+    *   Handling DOM Events -   
+
+            i   -   onclick ->  When an element is clicked.
+
+                    creating a function in onclick attribute.
+
+                        let btn = document.querySelector("button");
+
+                        btn.onclick = function() {
+                            console.log("button was clicked");
+                        };
+                    
+                    assign a function to onclick.
+
+                        function sayHello() {
+                            alert("Hello!");
+                        }
+
+                        btn.onclick = sayHello;
+
+                    assigning funtion to all buttons
+
+                        let btns = document.querySelectorAll("button");
+                        for (btn of btns) {
+                            btn.onclick = sayHello;
+                        }
+
+                        function sayHello() {
+                            alert("Hello!");
+                        }
+
+            ii  -   onmouseenter    ->  when mouse enters an element.
+            
+                    for(btn of btns) {
+                        btn.onmouseover = () => {
+                            console.log("you entered a button");
+                        }
+                    }
+
+                    //OR
+
+                    function sayEnter() {
+                        console.log("you entered a button");
+                    }
+
+                    for(btn of btns) {
+                        btn.onmouseenter = sayEnter;
+                    }
+
+    *   Event Listener  -   with the help of this method we can add multiple Event Listener for same event.
+                            in this we write event without adding on infront (onclick -> click, onmouseenter -> mouseenter).
+                            We can use EventListener for elements also.
+                            for more events go thorugh with mdn .
+
+
+                            Syntax:
+                                element.addEventListener(event, callback);      //adding EventListener
+                            
+                            eg., 
+                                for(btn of btns) {
+                                    btn.addEventListener("mouseenter", sayHello);
+                                    btn.addEventListener("mouseenter", sayEnter);
+                                    btn.addEventListener("dblclick", sayDoubleClicked);
+                                }
+
+            ->  this in Event Listeners -   When 'this' is used in a callback of event handler of something, it refers to that something.
+
+                    btn.addEventListener("click", function() {         //this will print button element(<button>Click me</button>)
+                        console.log(this);
+                    });
+                    btn.addEventListener("click", function() {         //this will print the innerText of button.
+                        console.log(btn.innerText);
+                    })
+
+            ->  Keyboard Events -   events for keyboard(key press).
+
+                    for this we pass a default argument (event) in our function, this event has many properties.
+                    Learn keyboard event properties on mdn.
+
+                        btn.addEventListener("click", function(event) {
+                            console.log(event);
+                        })
+
+                        in event argument there are two main properties - 
+
+                            * code - will return the code of particular key. for a => ("KeyA")
+
+                                    console.log(event.code);
+
+                            * key  - tells us what is printed over screen. for a => ("a")
+
+                                    console.log(event.key);
+
+                    properties - 
+
+                        *   keydown     - Fired when a key is pressed.      //for every key pressed on keyboard
+                        *   keyup       - Fires when a key is released (after it has been pressed down).    
+                        *   keypress    - Fires each time a key is pressed and released.
+
+            ->  Form Events -   events for form tag.
+
+                    <form action="/action">
+                        <input placeholder="username"/>
+                        <button>Register</button> 
+                    </form>
+
+                    let form = document.querySelector("form");
+                    let input = document.querySelector("input");
+
+                    form.addEventListener("submit", function() {
+                        alert(`Hello ${input.value}`);
+                    });
+
+                to avoid redirecting to "/action" page we can use avent.preventDefault();
+                with this we will not get to that url after submitting.
+
+                    form.addEventListener("submit", function(event) {
+                        event.preventDefault();
+                        alert(`Hello ${input.value}`);
+                    });
+
+            ->  Extracting Form Data    -   How to access the data of form.
+
+                    acess it with input.value;  //print the value of input.
+
+                Element property in form object   ->  in form object you will find a element propety in which all the element of form and there values are stored.
+
+                    form.addEventListener("submit", function(event) {
+                        event.preventDefault();
+                        let user = this.elements[0];    //form.elements[0];
+                        let pass = this.elements[1];    //form.elements[1];
+                        console.log(user.value);
+                        console.log(pass.value);
+                        alert(`Hi ${user.value}, your password is set to ${pass.value}`);
+                    });
+
+            ->  More Events 
+
+                    *   change event    - The change event occurs when the value of an element has been changed(only works on <input>, <textarea> and <select> elements).
+
+                            form.addEventListener("change", function(event) {
+                                event.preventDefault();
+                                console.log("input changed");
+                            });
+
+                    *   input event     - The input event fires when the value of an <input>, <select>, or <textarea> element has been changed at every step or every key press.
+
+                            form.addEventListener("input", function(event) {
+                                event.preventDefault();
+                                console.log("input changed");
+                            });
