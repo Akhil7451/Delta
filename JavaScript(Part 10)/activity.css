@@ -1,0 +1,15 @@
+.outerdiv {
+    text-align: center;
+}
+
+.container {
+    border: 2px solid black;
+    text-align: center;
+    width: 500px;
+    height: 200px;
+    margin: 10px auto;
+}
+
+.para {
+    margin: 10px auto;
+}
