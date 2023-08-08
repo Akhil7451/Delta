@@ -1,0 +1,45 @@
+Event Bubbling  -   when we add eventListeners for nested eliments that is known as Event Bubbling.
+
+        when there are different different eventListeners for every nested element than when we will click on inner element all 
+        the parent element's eventListeners will also be called automatically.
+
+        to stop this event bubbling we use a function event.stopPropagation(); for every individual eventListener.
+
+                <div>
+                <ul>
+                    <li>One</li>
+                    <li>Two</li>
+                    <li>Three</li>
+                </ul>
+                </div>
+
+                let div = document.querySelector("div");
+                let ul = document.querySelector("ul");
+                let lis = document.querySelectorAll("li");
+
+                div.addEventListener("click", function() {
+                        console.log("div was clicked");
+                });
+
+                ul.addEventListener("click", function(event) {\
+                        event.stopPropagation();
+                        console.log("ul was clicked");
+                });
+
+                for(li of lis) {
+                li.addEventListener('click', function(event) {
+                        event.stopPropagation();
+                        console.log("li was clicked");
+                });
+                }
+
+Event Delegation        -       Event Delegation is basically a pattern to handle events efficiently. Instead of adding an event listener to each and every similar element, 
+                                we can add an event listener to a parent element and call an event on a particular target using the .target property of the event object.
+
+                                        event.target;   //this function tells us due to which work done inside element.
+
+                                                ul.addEventListener("click", function(event) {
+                                                    if(event.target.nodeName == "BUTTON") {
+                                                        event.target.parentElement.remove();
+                                                    }
+                                                }); 
