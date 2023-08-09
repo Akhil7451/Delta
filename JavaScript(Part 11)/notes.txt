@@ -1,0 +1,99 @@
+JavaScript Call Stack   -   The call stack is used by JavaScript to keep track of multiple function calls. It is like a real stack in data structures
+                            where data can be pushed and popped and follows the Last In First Out (LIFO) principle.
+                            We use call stack for memorizing which function is running right now.
+
+Breakpoints             -   In the debugger window, you can set breakpoints in the JavaScript code.
+                            At each breakpoint, JavaScript will stop executing, and let you examine JavaScript values.
+                            After examining values, you can resume the execution of code (typically with a play button).
+                            You can also add conditional breakpoints to your program: if some condition is met then it stops.
+
+                                right side of console there is sources and from there you can add breakpoints to your js file.
+
+JS is Single Threaded   -   In JS at a time only 1 this will only execute of code
+                            Javascript is a single-threaded language, meaning that just one line of code may be run at once. Javascript is single-threaded
+                            because originally, it was only a web browser scripting language created to serve the needs of a single user on a single window of the browser.
+                            
+                                If we take an example of timeout function code will execute at the same time for all timeout functions, this is because 
+                                this wait is not done by the JS this is due to our browser. Out browser will do that timeout function.
+                                Browser will store the the function and when needed browser will add this to call stack so that function can execute.
+
+Synchrous nature        -   Nature of JS with Normal code without any function.   
+        
+Asynchrous nature       -   Nature of JS with functional code.   
+        
+Callback Hell           -   This is due to the asynchrous nature of JS. Also known as callback nesting.
+                            To avoid this hell we use promises and async & await.
+
+Promises                -   The Promises object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+                            This is an object.
+                            It has 3 states resolve, reject and pending.
+
+    resolve & failure we call them resolve & reject -   
+
+                            function savetoDb(data) {
+                                let internetSpeed = Math.floor(Math.random() * 10) + 1;
+                                return new Promise((resolve, reject) => {
+                                    if(internetSpeed > 4) {
+                                        resolve(`success : ${data} was saved`);
+                                    } else {
+                                        reject(`failure : we connection couldn't save you data!`);
+                                    }
+                                });
+                            }
+
+                            console.log(savetoDb("Akhil"));
+
+    then() & catch() method -   if we want to perform any action after fullfilling the promise then we will use then() method.
+                                if reject then use catch() method to catch the error thrown by the promise.
+
+                                    let request = savetoDb("Akhil");    //req = promise object
+                                    request
+                                    .then(() => {
+                                        console.log("Promise was resolved");
+                                    })
+                                    .catch(() => {
+                                        console.log("Promise was rejected");
+                                        console.log(request);
+                                    });
+
+Promise Chain           -   when we want to add another data after saving previous data.
+
+                            savetoDb("Akhil")
+                            .then(() => {
+                                console.log("data1 saved");
+                                return savetoDb("Hello");
+                            })
+                            .then(() => {
+                                console.log("data2 saved");
+                                return savetoDb("World");
+                            })
+                            .then(() => {
+                                console.log("data3 saved");
+                                
+                            })
+                            .catch(() => {
+                                console.log("Promise was rejected");          
+                            });
+
+    Results & errors in Promises    -   promises are rejected and resolved with some data (valid results or errors).
+                                        result will be the msg we added to success inside main function.
+
+                                            savetoDb("Akhil")
+                                            .then((result) => {
+                                                console.log("result : ", result);
+                                                console.log("data1 saved");
+                                                return savetoDb("Hello");
+                                            })
+                                            .then((result) => {
+                                                console.log("result : ", result);
+                                                console.log("data2 saved");
+                                                return savetoDb("World");
+                                            })
+                                            .then((result) => {
+                                                console.log("result : ", result);
+                                                console.log("data3 saved");
+                                            })
+                                            .catch((error) => {
+                                                console.log("error : ", error);
+                                                console.log("Promise was rejected");          
+                                            });
