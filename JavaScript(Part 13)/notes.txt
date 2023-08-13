@@ -1,0 +1,59 @@
+Axios   -   Library to make HTTP requests.
+            Internally it also uses fetch method but this is more efficient method.
+            When we get response using fetch that's not in a proper json format that is in readable form so we have to pass that to make it in json format.
+            But using Axios we will get the data in json format.
+
+            Learn more about from google axiosgithub.
+
+            To use without installation we can copy the cdn link of axiosgithub
+
+                <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+
+                while using axios we can get the request by using axios.get();
+
+                    let url = "https://catfact.ninja/fact";
+
+                    async function getFact() {
+                        try {
+                            let res = await axios.get(url);
+                            console.log(res);
+                        } catch (error) {
+                            console.log("ERROR : ". error);
+                        }
+                    }
+
+                    getFact();
+
+                from here we can directly access our res.data OR res.data.fact;
+
+    Sending Headers  -   sends headers with our request.
+
+            let url = "https://icanhazdadjoke.com/";
+
+            async function getJoke() {
+                try {
+                    const config = {headers: {Accept: "application/json"}};  //header added to the request to get the data in json format.
+                    let res = await axios.get(url, config);                 //pass the header with url
+                    console.log(res.data);
+                } catch (error) {
+                    console.log("ERROR : ", error);
+                }
+            } 
+
+    Updating Query String   -   To update query string inside URLs
+
+
+            let url = "http://universities.hipolabs.com/search?name=";
+
+            let country = "india";
+
+            async function getColleges() {
+                try {
+                    let res = await axios.get(url+country);
+                    console.log(res);
+                } catch (error) {
+                    console.log("ERROR : ", error);
+                }
+            }
+
+            this will add (name=india) inside url this is known as updatinf query string.
