@@ -1,0 +1,153 @@
+What is Git ?
+
+    Free & Open Source Version Control System(Tools that helps to track changes in code). Git is fast.
+
+        *   Track History
+        *   Help to collaborate
+
+What is Github ?
+
+    Website where we host repositories online.
+
+Using Git   -   
+
+    *   Command Line (Most popular)
+    *   IDE / Code Editors (like VSCode)
+    *   Graphical User Interface (like GitKraken)
+
+    These are common Git commands used in various situations:
+
+        start a working area (see also: git help tutorial)
+
+            clone     Clone a repository into a new directory
+            init      Create an empty Git repository or reinitialize an existing one
+
+        work on the current change (see also: git help everyday)
+
+            add       Add file contents to the index
+            mv        Move or rename a file, a directory, or a symlink
+            restore   Restore working tree files
+            rm        Remove files from the working tree and from the index
+
+        examine the history and state (see also: git help revisions)
+
+            bisect    Use binary search to find the commit that introduced a bug
+            diff      Show changes between commits, commit and working tree, etc
+            grep      Print lines matching a pattern
+            log       Show commit logs
+            show      Show various types of objects
+            status    Show the working tree status
+
+        grow, mark and tweak your common history
+
+            branch    List, create, or delete branches
+            commit    Record changes to the repository
+            merge     Join two or more development histories together
+            rebase    Reapply commits on top of another base tip
+            reset     Reset current HEAD to the specified state
+            switch    Switch branches
+            tag       Create, list, delete or verify a tag object signed with GPG
+
+        collaborate (see also: git help workflows)
+
+            fetch     Download objects and refs from another repository
+            pull      Fetch from and integrate with another repository or a local branch
+            push      Update remote refs along with associated objects
+
+        'git help -a' and 'git help -g' list available subcommands and some
+        concept guides. See 'git help <command>' or 'git help <concept>'
+        to read about a specific subcommand or concept.
+        See 'git help git' for an overview of the system.
+
+    Configuring Git -   
+
+        git config --global user.name "My Name"
+        git config --global user.email "someone@email.com"
+
+        git config --list   (to check the details of config you set).
+
+    Basic Commands  -   
+
+        *   clone   -   Cloaning a repository on our local machine
+
+                git clone some-link
+            
+        *   status  -   displays the status of the code.
+
+                git status
+
+        *   add     -   adds new or changed files in your working directory to the Git staging area.
+
+                git add fileNAme
+                git add .               //adds all the files in the folder.
+
+        *   commit  -   it is the record of change
+
+                git commit -m "some message"
+
+        *   push    -   upload local repo content to remote repo
+
+                git push origin main
+
+            If we write  (git push -u origin main) than you don't have to write origin main evry time while push.
+
+        *   init    -   Create an empty Git repository or reinitialize an existing one
+                        for this first create a new folder and than to add this in git repo use init command
+
+                            git init
+
+                        after this we will add files we want to add than will create a repo on github and set that link as a remote.
+
+                            git remote add origin link      //to set link as origin
+                            git remote -v                   //to verify remote
+                            git branch                      //to check branch 
+                            git branch -M main              //to rename branch to main
+                            git push origin main            //TO PUSH CODE.
+
+    Branch Commands -   
+
+        git branch                              (to check branch)
+        git branch -M main                      (to rename branch)
+        git checkout <-branch name->            (to navigate)
+        git checkout -b <-new branch name->     (to create new branch)
+        git branch -d <-branch name->           (to delete branch)
+
+        To push any branch we should set an upstream for new Branch
+            git push --set-upstrean origin feature(branch name)
+
+
+    Merging Branches -  
+
+        git diff <-branch name->                (to compare commit, braanches, files & more)
+        git merge <branch name>                 (to merge two branches)
+        git rebase <branch name>                (to move commits from one branch to another)    
+                OR
+        Create a PR(Pull Request)   -   It lets you tell others about chnages you've pushed to a branch in a repo on Github. 
+        When we made a new branch github will automatically show an option of Compare & pull Request
+
+            git pull origin main
+
+    Merge Conflicts -   An event that takes place when Git is unable to automatically resolve differences in code between two commits.
+
+    Fixing Mistakes -   
+
+        Case 1: staged changes          //chnages you don't want but you add them, to remove that add.
+                git reset <-file name-> //to reset any change from any file
+                git reset               //to resert the last change
+
+        Case 2: commited chnages(for one commit)
+                git reset HEAD~1
+
+        Case 3: commited changes(for many commit)
+                git reset <-commit hash->
+                    git log (to check the info of every commit) from thid we copied the code of that commit and write a command
+                    git reset <-code->
+
+                git reset --hard <-commit hash->   //to reset the chnages made after the commit we want to reset.
+
+What is Forking ?
+
+    A fork is a new repository that shares code and visibility settings with the original "upstream" repository.
+    Fork is a rough copy.
+
+    
