@@ -1,0 +1,278 @@
+Node.js -   It is a JavaScript Runtime Environment. IN which we can run JavaScript outside the browser
+            It is used for server side programming. 
+            Node.js is not a language, library or framework.
+            It is very popular and based on JavaScript.
+
+    Node REPL   -   Read Ivaluate Print Loop
+
+        to start node we have to write node in terminal.
+        then it will give us this prompt:>
+        >node
+        Welcome to Node v12.4.0
+
+            *   .help   -   for more command info.
+            *   .break  -   Sometimes you get stuck, this gets you out
+            *   .clear  -   Alias for .break
+            *   .editor -   Enter editor mode
+            *   .exit   -   Exit the REPL
+            *   .help   -   Print this help message
+            *   .load   -   Load JS from a file into the REPL session
+            *   .save   -   Save all evaluated commands in this REPL session to a file
+
+    Node Files  -   How to work with files.
+
+        *   node fileName.js
+
+    Process -   
+        
+        process:        object provides information about, and control over, the current Node.js process.
+
+            *   process.release -   gives us info of release.
+            *   process.cwd()   -   gives us current working directories.
+
+        process.args:   returns an array containing the command-line arguments passed when the Node.js process was launched.   
+            
+            let args = process.argv;
+            for(let i=2; i<args.length; i++) {
+                console.log("Hello to ", args[i]);
+            }
+
+            node script.js akhil aditya amit akshat hatya   //these names are command line arguments
+            This will print all the arguments we passed in command line.
+
+    module.exports -   requiring files. For this we create a new math.js file.
+
+        require()   -   a built-in function to include external modules that exists in separate files.
+
+        module.exports  -   a secial object with this we can send any function or method to another file from that file.
+
+        CODE inside math.js
+
+            const sum = (a, b) => a+b;
+            const mul = (a, b) => a*b;
+            const g = 9.8;
+            const PI = 3.14;
+
+            let obj = {
+                sum: sum,
+                mul: mul,
+                g: g,
+                PI: PI,
+            };
+
+            module.exports = obj;
+
+        also we can write   -  
+
+            const sum = (a, b) => a+b;
+            const mul = (a, b) => a*b;
+            const g = 9.8;
+            const PI = 3.14;
+
+            module.exports = {
+                sum: sum,
+                mul: mul,
+                g: g,
+                PI: PI,
+            };
+
+        also we can write   -   
+
+            module.exports.sum = (a, b) => a+b;
+            module.exports.mul = (a, b) => a*b;
+            module.exports.g = 9.8;
+            module.exports.PI = 3.14;
+
+        CODE inside script.js
+
+            const math = require("./math");
+            console.log(math);
+
+        If we don't export anything from math.js than require will print an empty object {}.
+        To get the value of any individual item (console.log(math.mul(2, 3));)
+
+    module.exports  -   requiring directories
+
+        first we will create new files which we want to export.
+        In this case we have two files named 'apple' and 'orange'.
+        apple.js     // exporting apple property
+            module.exports = {
+                name: "apple",
+                color: "red",
+            };
+        
+        orange.js    // exporting orange property
+            module.exports = {
+                name: "orange",
+                color: "orange",
+            };
+
+        Then we will create index.js file this should be same as index.js
+        and will require all the exporsts inside this and than export this file.
+
+            const apple = require("./apple");
+            const orange = require("./orange");
+
+            let fruits = [apple, orange];
+
+            module.exports = fruits;
+
+        inside script.js we will write.
+
+            const info = require("./Fruits");
+
+            console.log(info);
+
+NPM (Node Package Manager)  -   npm is the standard package manager for Node.js
+                            
+                            *   library of packages -   is a library from where we can install packages.
+                            *   command line tool   -   it is a tool through which we can install and use packages.
+
+                            npm <command>
+
+                            Usage:
+
+                            npm install         -   install all the dependencies in your project
+                            npm install <foo>   -   add the <foo> dependency to your project
+                            npm test            -   run this project's tests
+                            npm run <foo>       -   run the script named <foo>
+                            npm <command> -h    -   quick help on <command>
+                            npm -l              -   display usage info for all commands
+                            npm help <term>     -   search for help on <term> (in a browser)
+                            npm help npm        -   more involved overview (in a browser)
+
+                            All commands:
+
+                                access, adduser, audit, bugs, cache, ci, completion,
+                                config, dedupe, deprecate, diff, dist-tag, docs, doctor,
+                                edit, exec, explain, explore, find-dupes, fund, get, help,
+                                hook, init, install, install-ci-test, install-test, link,
+                                ll, login, logout, ls, org, outdated, owner, pack, ping,
+                                pkg, prefix, profile, prune, publish, query, rebuild, repo,
+                                restart, root, run-script, search, set, shrinkwrap, star,
+                                stars, start, stop, team, test, token, uninstall,
+                                unpublish, unstar, update, version, view, whoami
+
+                            Specify configs in the ini-formatted file:
+                                C:\Users\Hrithik\.npmrc
+                            or on the command line via: npm <command> --key=value
+
+                            More configuration info: npm help config
+                            Configuration fields: npm help 7 config
+
+    Installing Packages -   TO install Package you want to use.
+                            npmjs.com - you can find more on this.
+
+        npm install <-package name->
+
+        Working on FIGLET Package   -   
+
+            *   We will make directory where we want to install our package.
+                BACKEND->FigletDir
+
+                *   Now go inside that folder and install package using below command
+                        $ npm install figlet
+
+                        This will install package inside your directory.
+
+            *   node_modules    -   The node_modules folder contains every installed dependency for your project.
+
+                ->  Dependency  -   The softwares with which our project runs those we called dependency. 
+                                    A software dependency is a relationship between software components where one component relies on the other to work properly.
+
+            *   package-lock.json   -   It records the exact version od every installed dependency including its sub-dependencies and their version.
+
+            *   package.json    -   The package.json file contains descriptive and functional metadata about a project, such as a name, version, and dependencies.
+
+                    npm init
+
+                If Sometimes our node_modules is deleted we can install it back quickely if we have package.json file. By writing command
+
+                    npm install
+    Usage of Package    -   how to use those packages
+
+        *   We will create index.js inside FigletDir
+
+                const figlet = require("figlet");   //we will not use (/) for requiring package
+
+                figlet("Hello World!!", function (err, data) {
+                    if (err) {
+                    console.log("Something went wrong...");
+                    console.dir(err);
+                    return;
+                    }
+                    console.log(data);
+                });
+
+    Creating own package    -   Creating own package
+
+        *   First create a directory MyProject
+        *   inside that we will initialize a package.json for that by writing.
+                npm init
+
+                then it will ask some questions like:
+
+                Name : "myproject",
+                Version : "1.0.0",
+                Description : "This is first project"
+                entry point : 
+                test cmd :
+                git repository url :
+                keywords :
+                author : "Akhil Kumar"
+                license :
+
+                About to write to /home/user1234567890/MyProject/package.json:
+                    {
+                        "name": "myproject",
+                        "version": "1.0.0",
+                        "description": "This is first project",
+                        "main": "index.js",
+                        "scripts": {
+                            "test": "echo \"Error: no test specified\" && exit 1"
+                        },
+                        "author": "Akhil Kumar",
+                        "license": "ISC"
+                    }
+        *   If we want to add some other package inside MyProject we will wite npm install figlet inside MyProject directory.
+            After this you can see new dependencies added to package.json in your current working dirctory.
+
+    Local v/s Global    -   Local means the package can only be used inside that folder.
+                            Global means the package can be used anywhere on system.
+                            To install any local packages run command as follows
+
+                                npm install -g <-package name->     //this will install package globally.
+
+                            or
+
+                                sudo npm install <package> --global      //this will also work but with root access.
+
+                            After that you have to link that package inside the directory you want to use package.
+
+                                npm link <-package name->
+
+require v/s import  -   We can't selectively load only the pieces we need with require but with the import, we can selectively load only the 
+                        pieces we need, which can save memory.
+
+                        Loading is synchronous for 'require' but can be asynchronous for 'import'.
+                            import {something} from "./fileName.js"
+
+                        For this we will create a functions in math.js using export keywords
+                            export const sum = (a, b) => a+b;
+                            export const mul = (a, b) => a*b;
+                            export const g = 9.8;
+                            export const PI = 3.14;
+
+                        and inside script.js we will import these in this we can import only those which we want.
+                            import {sum, PI} from "./math.js";   
+
+                            console.log(sum(2, 4));
+
+                        after this we will create a package inside same directory where we want to import
+                            npm init
+
+                        after this we will give properties.
+
+                        after this inside package.json we will add a new property named:
+                            "type": "module"   
+
