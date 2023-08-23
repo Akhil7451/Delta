@@ -1,0 +1,119 @@
+Library v/s Framework
+
+                    Library                                                         Framework
+
+    A library is a collection of pre-written                     A framework is a set of pre-written code that
+    code that can be used to perform specific                    provides a structure for developing software
+    tasks.                                                       applications.
+
+    eg  -   axios                                                eg -   express
+
+Express -   A Node.js web application framework that helps us to make web application.
+            It is used for server side programming.
+            Work of express -   to create server side web applications.
+
+                *   Listen incoming requests.
+                *   Parse these request.
+                *   Match response with routes.
+                *   Response.
+
+    Installing express  -   expressjs.com
+
+        Inside ExpressDor -
+
+            *   npm install express
+            *   touch index.js  -   this file will act as a server.
+
+                    const express = require("express");
+                    const app = express();
+
+                    console.dir(app);
+
+                it will show you all the methods and properties of this.
+
+            *   Ports   -   are the logical endpoints of a network connection that is used to exchange information between
+                            a web server and a web client.
+            *   app.listen  -   it listen all the incoming request.
+
+                    first we will set port from where it will listen request.
+                        let port = 3000;
+                        app.listen(port, () => {
+                            console.log(`app is listening on port ${port}`);
+                        });
+                    this will start a server at port 3000.
+
+                    to send request search localhost:3000 on your browser.
+
+            *   Handling Request    -   how to handle request.
+
+                app.use -   This method listen to every request if it is get/post.
+
+                    app.use((req, res) => {
+                        console.log("request received");
+                    });
+
+            *   Sending a Response  -   Sending response to client. Lern on expressjs.com
+ 
+                    res.send([body])    -   Sends the HTTP response. The body parameter can be a Buffer object, a String, an object, Boolean, or an Array.
+
+                        app.use((req, res) => {
+                            console.log("request received");
+                            res.send("This is a basic response");   //send response
+                        });
+                    
+            *   Routing -   it is a process of selecting a path for traffic in a network or between or across multiple networks.
+
+                    app.get(name)   -   this method is used to get the request and send response according to the route on which request is comming.
+                                        we can send pnly one response for same path.
+
+                        app.get("/", (req, res) => {
+                            res.send("You contacted root path");
+                        });
+
+                        app.get("/apple", (req, res) => {
+                            res.send({
+                                name: "apple",
+                                color: "red",
+                            });
+                        });
+
+                        app.get("/banana", (req, res) => {
+                            res.send({
+                                name: "banana",
+                                color: "yellow",
+                            });
+                        });
+
+                        app.get("*", (req, res) => {
+                            res.send("This path does not exist");
+                        });
+
+                    We can also use post instead of get.
+
+            *   Nodemon -   To automatically restart server with code chnages.
+
+                    npm install -g nodemon      //install nodemon
+                    nodemon -v                  //check node version
+                    nodemon index.js            //instead of node index.js
+                    
+                    After this only write rs for restart the server.
+                    
+            *   Path Parameters -   Whatever is written after / in url that is known as parameter.
+                    req.params
+
+                    app.get("/:username", (req, res) => {
+                        console.log(req.params);            //gives output as {username: 'value'}
+                        res.send("Hello, i am root");
+                    });
+
+            *   Query String    -   when we search anything it goes to query string.
+                    req.query
+
+                    app.get("/search", (req, res) => {
+                        console.log(req.query);
+                        res.send("no result");
+                    });
+
+                    than send request like (http://localhost:3000/search?q=apple&color=green)
+                    output  -   { q: 'apple', color: 'green' }
+                    It will store all the parameters in query object like mentioned above.
