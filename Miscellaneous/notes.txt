@@ -1,0 +1,149 @@
+Get & Post Requests -   
+
+                GET                                                             POST
+
+    Used to Get some response.                              Used to POST something(for Create/Write/Update)
+    Data sent in query strings                              Data sent via request body(any type of data & is not visible in URL)
+    (limited, string data & visible in URL)
+
+Handling Post Request   -   How to handle the data which we get from the post request.
+
+    *   Set up POST request route to get some response.
+
+        app.post("/register", (req, res) => {
+            res.send("Standard POST response");
+        });
+
+    *   Parse POST request data.
+
+        app.use(express.urlencoded({extended: true}));  //if data is in urlencoded form than express will automatically parse and use it.
+        app.use(express.json());    //to read the json type of data too.
+
+    *   to use our data 
+
+        app.post("/register", (req, res) => {
+            let {user, password} = req.body;
+            res.send(`Standard POST response. Welcome ${user}`);
+        });
+
+                                    Revisiting JS
+
+Object Oriented Programming -   OOP is a very powerful programming paradigm that can help us tackle huge projects by creating the abstraction of entities.
+
+    To structure our code   -   
+
+        *   Object Prototypes  -    Prototypes are yhe mechanism by which JavaScript objects inherit features from one another.
+                                    It is like a single template object that all objects inherit methods and properties from without having their own copy.
+
+                ->  Inside JavaScript each array is an object and all the objects have their built-in property  which is known as prototypes.
+            
+                        arr.__proto__         (reference)
+
+                            We can access these like arr.__proto__.push = (n) => {console.log("Pushing number : ", n);} , from now onward for arr push will work to console the whatever we define here.
+
+                        Array.prototype     (actual object)
+
+                            we can access all the prototype for arrays.
+
+                        String.prototype
+
+                            we can access all the prototype for string.
+
+        *   Factory Function    -      A function that creates objects.
+
+                This is a factory function we create : 
+
+                    function PersonMaker(name, age) {
+                        const person = {
+                            name: name,
+                            age: age,
+                            talk() {
+                                console.log(`Hi, my name is ${this.name}`);
+                            },
+                        };
+                        return person;
+                    }
+
+                To create a person using this factory function : 
+
+                    let p1 = PersonMaker("akhil", 22);
+                    let p2 = PersonMaker("aditya", 34);
+
+                    p1.talk();      //  Hi, my name is akhil
+                    p2.talk();      //  Hi, my name is aditya
+
+                Disadvantage of Factory Function - in this each object will have its own copy.
+
+        *   New Operators   -   The new operator lets developers create an instance of a user-defined object tyoe or of one of the built-in
+                                object types that has a constrictor function.
+
+                                When a function is called with the new keyword, the function will be used as a constructor, new will do the following things:
+
+                                    *   Creates a blank, plain JavaScript object. For convenience, let's call it newInstance.
+                                    *   Points newInstance's [[Prototype]] to the constructor function's prototype property, if the prototype is an Object. Otherwise, newInstance stays as a plain object with Object.prototype as its [[Prototype]].
+                                    *   Executes the constructor function with the given arguments, binding newInstance as the this context (i.e. all references to this in the constructor function now refer to newInstance).
+                                    *   If the constructor function returns a non-primitive, this return value becomes the result of the whole new expression. Otherwise, if the constructor function doesn't return anything or returns a primitive, newInstance is returned instead.
+
+                function Person(name, age) {
+                    this.name = name;
+                    this.age = age;
+                }
+
+                Person.prototype.talk = function() {        //to add talk function to prototype of person this will be available for every instance/object created using this constructor.
+                    console.log(`Hi, my name is ${this.name}`);
+                }
+
+                let p1 = new Person("akhil", 22);
+                let p2 = new Person("aditya", 34);
+
+        *   Classes -   Classes are a template for creating objects.
+                        The constructor method is a special method of a class for creating and initializing an object instance of that class.
+
+                            class Person {
+                                constructor(name, age) {
+                                    this.name = name;
+                                    this.age = age;
+                                }
+                                talk() {
+                                    console.log(`Hi, my name is ${this.name}`);
+                                }
+                            }
+
+                            let p1 = new Person("akhil", 22);
+                            let p2 = new Person("aditya", 34);
+
+        *   Inheritance -   Inheritance is a mechanism that allows us to create new classes on the basis of already existing classes.
+
+            for this we use extends keyword to inherit the properties of parent class
+            and than we use super(prop1, prop2).
+            
+                class Person {
+                    constructor(name, age) {
+                        this.name = name;
+                        this.age = age;
+                    }
+                    talk() {
+                        console.log(`Hi, my name is ${this.name}`);
+                    }
+                }
+
+                class Student extends Person{
+                    constructor(name, age, marks) {
+                        super(name, age);   //parent class constructor is being called
+                        this.marks = marks;
+                    }
+                }
+
+                let stu1 = new Student("akhil", 22, 95);
+
+                class Teacher extends Person{
+                    constructor(name, age, subject) {
+                        super(name, age);   //parent class constructor is being called
+                        this.subject = subject;
+                    }
+                    teach() {
+                        console.log(`I am teaching ${this.subject}`);
+                    }
+                }
+
+                let teach1 = new Teacher("shradha", 26, "delta");
