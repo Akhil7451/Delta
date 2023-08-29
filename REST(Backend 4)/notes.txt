@@ -1,0 +1,91 @@
+REST
+    Representational State Transfer
+
+    REST is an architectural style that defines a set of constraints(rules) to be used for creating web services/api.
+
+    RESTfull APIs   -   APIs which apply the concepts/rules of REST.
+    To learn more about REST api go to  -   https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/
+
+    CRUD Operations -   this means (Create Read Update Delete)
+
+        *   GET     -   retrieves resources
+        *   POST    -   submit new data to the server
+        *   PUT     -   updates existing data
+        *   PATCH   -   update existing data partially
+        *   DELETE  -   removes data
+
+        Resource    -   On which CRUD operation will perform.
+        
+    Creating RESTfull APIs
+
+        *   GET         /posts          to get data for all posts.      INDEX(main)
+        *   POST        /posts          to add a new post.              CREATE
+        *   GET         /posts/:id      to get one post(using id)       VIEW
+        *   PATCH       /posts/:id      to update specific post         UPDATE
+        *   DELETE      /posts/:id      to delete specific post.        DESTROY
+
+
+        Implement : GET /posts  (INDEX Route)
+
+            GET     /posts      to get data for all posts.
+            
+        Implement : POST /posts (CREATE Route)
+
+            For this we will use 2 rooutes
+
+                *   Serve the form      GET     /posts/new
+                *   Add the new post    POST    /posts
+
+        Redirect    -   to connect different pages with one another.
+
+            Used to redirect on /posts after clicking on create post.
+            res.redirect(URL);
+
+        Implement : GET /posts/:id  (SHOW Route)
+
+            GET     /posts/:id  to get one post(using id)
+
+        Create id for Posts -   to give unique id for each post.
+
+            UUID Package    -   Universally unique identifier.
+
+                npm install uuid
+
+                const { v4: uuidv4 } = require('uuid');
+                uuid4();
+
+        Implement : PATCH /posts/:id    (UODATE Route)
+
+            PATCH   /posts/:id  to update specific post.
+
+            Use method-override package to send patch/put or delete method.
+
+                npm install method-override;
+
+                and will use method of query value so we write inside edit.js
+
+                    <form method="post" action="/posts/<%= post.id %>?_method=PATCH">
+
+                inside index.js
+
+                    const methodOverride = require("method-override");
+                    app.use(methodOverride("_method"));
+
+        Implement : DELETE /posts/:id   (Destroy Route)
+
+            DELETE  /posts/:id  to delete specific post.
+
+            inside index.ejs
+
+                <form method="post" action="/posts/<%= post.id %>?_method=DELETE">
+                <br/>
+                    <button>Delete Post</button>
+                </form>
+
+            inside index.js
+
+                app.delete("/posts/:id", (req, res) => {
+                    let {id}= req.params;
+                    posts = posts.filter((p) => id != p.id);
+                    res.redirect("/posts");
+                });
