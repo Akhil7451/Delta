@@ -1,0 +1,124 @@
+Clause    -   To define some conditions
+
+    *   WHERE   -   to find data according to specifc condition. 
+
+            SELECT * FROM User
+            WHERE Followers >= 200;   //give list of users whose foloowers >= 200
+
+            SELECT Name, Followers FROM User    //to print Name anf followers only.
+            WHERE Followers >= 200;
+
+        ->  Operators   -   We can perform following task using these operators.
+
+                *   Arithmetic Operators    -   (+), (-), (*), (/), (%)
+                *   Comparison Operators    -   (=), (!=), (>), (>=), (<=)
+                *   Logical Operators       -   
+                    ->  AND     -   when we want to add two or more conditions where both conditions should be true
+                    ->  OR      -   when we want if one condition is true.
+                    ->  NOT     -   to negate the given condition.  (WHERE Age NOT IN(14, 16);)
+                    ->  IN      -   matches any value in the list.  (WHERE Email IN ("adam@gmail.com", "bob123@gmail.com");, WHERE Age IN (14, 16);)
+                    ->  BETWEEN -   selects for a given range.  (WHERE Age BETWEEN 15 AND 17)
+                    ->  ALL     -   
+                    ->  LIKE    -   
+                    ->  ANY     -   
+                *   Bitwise Operators       -   (&), (|)
+
+    *   LIMIT   -   Sets a upper limit on number of(tuples) rows to be returned.
+                    It will give the data in range if limit is 2 it will show data only 2 users.
+
+            SELECT * FROM User
+            WHERE Age > 14
+            LIMIT 2;
+
+    *   Oreder by-  To sort in ascending(ASC) or descending order(DESC)
+
+            SELECT * FROM User
+            ORDER BY Age ASC; 
+
+    *   Aggregate Functions -   Aggregate functions perform a calculation on a set of values, and return a single value.
+
+        *   COUNT() -   Count of the given data.
+        *   MAX()   -   Max from the given data.
+        *   MIN()   -   Min from the given data.
+        *   SUM()   -   Sum of given data.
+        *   AVG()   -   Avg of given data.
+
+            SELECT AVG(Age)
+            FROM User;
+
+    *   Group by    -   Groups rows that have the same values into summary rows.
+                        It collects data from multiple records and groups tha result by one or more column.
+                        Generallu we use group by eith some aggregate function.
+
+                SELECT Age, COUNT(Id)
+                FROM User
+                GROUP BY Age;
+
+    *   Having      -   Similar to WHERE i.e. applies some conditon on rows, but it is used when  we want to apply any condition after grouping.
+                        WHERE is for table, HAVING is for group
+                        Grouping is necessary for HAVING.
+
+                SELECT age, MAX(Followers)
+                FROM User
+                GROUP BY Age
+                HAVING max(Followers > 200);
+
+General Order   -   When we want to add more than one clause than they should be in this order.
+
+        SELECT column(s)
+        FROM table_name
+        WHERE condition
+        GROUP BY column(s)
+        HAVING condition
+        ORDER BY column(s) ASC;
+
+Table Queries   -   Some are in previous and rest are explained here
+
+    *   Update  -   Update data inside table
+                    When we are using UPDATE command in SQL first time it will give eroor so we have to write 
+                    additional command
+
+                    SET SQL_SAFE_UPDATES = 0;       //this allow us to update out data in SQL
+
+                    UPDATE User
+                    SET Followers = 600
+                    WHERE Age = 16;
+
+    *   Delete  -   Delete the entire table
+
+            DELETE FROM User
+            WHERE Age = 14;     If we don't use WHERE with DELETE it will Delete our Table.
+
+    *   Alter   -   To chaneg Schema(columns)
+
+        ->  ADD Column  -   To add a new column in out data.
+
+                ALTER TABLE table_name
+                ADD COLUMN column_name datatype constraint;
+        
+        ->  DROP Column -   Delete column from table.
+
+                ALTER TABLE table_name
+                DROP COLUMN column_name;
+
+        ->  RENAME Table    -   Change the name of emtire table
+
+                ALTER TABLE table_name
+                RENAME TO new_table_name;
+
+        ->  CHANGE Column(rename)   -   rename the column name.
+
+                ALTER TABLE table_name
+                CHANGE COLUMN old_name new_name new_datatype new_constraint;
+
+        ->  MODIFY Column -   modify datatype/constraint.
+
+                ALTER TABLE table_name
+                MODIFY col_name new_datatype new_constraint; 
+
+
+    *   Truncate-   To delete entire data inside table
+                    If we had links with any other table we can not TRUNCATE the Table so first we have to remove the link.
+                    By (DROP linked_table_name) deleting the another table.
+
+                TRUNCATE TABLE User;

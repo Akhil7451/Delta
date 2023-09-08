@@ -1,0 +1,203 @@
+            Our First DataBase  :   SQL   
+
+    MySQL   ->  Is a DataBase
+    SQL     ->  Is a language to use MySQL(DataBase)
+
+    SQL is used to manage our DataBase.
+
+DataBase    :   It is a collection of data in a format that can be easily accessed.
+
+    Why databases ?
+
+        *   can storage large data
+        *   features like security, scalability etc.
+        *   Easier to insert, update or delete data
+
+DBMS    :   DataBase Management System. A additional layer on our DB like a commands or functions we set for our DB to work efficiently is known as DBMS.
+
+SQL v/s NoSQL   :   
+
+                    SQL                                             NoSQL
+        
+        Relational Database(data stored                 Non Relational Database(data stored
+        in Tables)                                      in document/key-val/graphs etc.)
+
+        eg - MySQL, Oracle, PostgreSQL                  eg - MongoDb, Cassandra. Neo$j etc.
+             etc. 
+
+MERN    :   MongoDb Express React Node.js
+MEAN    :   MongoDb Express Angulae Node.js
+
+SQL -   (Structured Query Language)
+
+    SQL is a programming language used to interact with relational databases.
+
+    Schema  -   design of a table.(Info stored in columns)
+    Tuple   -   data for a particular person/thing(Info stored in rows)
+
+Our 1st DataBase
+
+    CREATE DATABASE db_name;    //Create database
+    DROP DATABASE db_name;      //Delete database
+    USE db_name;                //To create table inside database
+
+Our 1st Table
+
+    Creating table
+
+        CREATE TABLE table_name (               //to give name to the table
+            column_name1 datatype constraint,   //to set Schema(column)name
+            column_name2 datatype constraint,   //to set Schema(column)name
+            column_name3 datatype constraint    //to set Schema(column)name
+        );
+
+        CREATE TABLE Student(
+        roll_no INT,            //roll-no datatype-INT
+        name VARCHAR(30),       //name datatype VARCHAR(length) -> String 
+        age INT                 //age datatype-INT
+        );
+
+    Inserting data
+
+        INSERT INTO student
+        VALUES
+        (101, "Akhil", 21),
+        (102, "Aditya", 21);
+
+    Check data
+
+        SELECT * FROM student;
+
+Database Queries    -   Database commands to perform sction over our database.
+
+    CREATE DATABASE IF NOT EXISTS db_name;       //to create database only if it's not already exists.
+    DROP DATABASE IF EXISTS db_name;             //to delete database only if it exists.
+    SHOW DATABASES;                             //to show all the databases present.
+    SHOW TABLES;                                //to show all the tables present.
+
+Table Queries   -   commands to perform actions with table.
+
+    *   Create  -   Create new table
+
+            CREATE TABLE table_name (               //to give name to the table
+                column_name1 datatype constraint,   //to set Schema(column)name
+                column_name2 datatype constraint,   //to set Schema(column)name
+            );
+
+        EG - 
+            CREATE TABLE User(
+                Id INT,
+                Age INT,
+                Name VARCHAR(30) NOT NULL,
+                Email VARCHAR(50) UNIQUE,
+                Followers INT DEFAULT 0,
+                Following INT DEFAULT 0,
+                CONSTRAINT age_check CHECK (Age >= 13),
+                PRIMARY KEY (id)
+            );
+
+    *   Insert  -   Insert data to that table
+
+            INSERT INTO User
+            (id, age, Name, Email, Followers, Following)
+            VALUES
+            (1, 14, "Adam", "adam@gmail.com", 123, 145),
+            (2, 15, "Bob", "bob123@gmail.com", 200, 200),
+            (3, 16, "Casey", "casey@email.com", 300, 306),
+            (4, 17, "Donald", "donald@gmail.com", 200, 105);
+
+    *   Update  -   Update data inside table
+    *   Alter   -   To chaneg Schema(columns)
+    *   Truncate-   To delete entire data inside table
+    *   Delete  -   Delete the entire table
+    
+DATA TYPES : Data types in SQL.
+
+    Data type	            Description                                                                                     USAGE
+    -----------------------------------------------------------------------------------------------------------------------------------                                                                                                                    
+    |CHAR(size)	            A FIXED length string (can contain letters, numbers, and special characters).                   CHAR(50)
+    |                        The size parameter specifies the column length in characters - can be from 0 to 255.        
+    |                        Default is 1
+    |                    
+    |VARCHAR(size)           A VARIABLE length string (can contain letters, numbers, and special characters).                VARCHAR(50)
+    |                        The size parameter specifies the maximum string length in characters - can be 
+    |                        from 0 to 65535
+    |
+    |BLOB(size)              For BLOBs (Binary Large Objects). Holds up to 65,535 bytes of data                              BLOB(1000)
+    |
+    |INT                     Allows whole numbers between -2,147,483,648 and 2,147,483,647                                   INT
+    |
+    |TINYINT                 Allows whole numbers from 0 to 255                                                              TINYINT
+    |
+    |BIGINT                  Allows whole numbers between -9,223,372,036,854,775,808 and 9,223,372,036,854,775,807           BIGINT
+    |
+    |BIT                     Can store x-bit value. x can range from 1-64                                                    BIT(2)
+    |
+    |FLOAT                   Decimal number - with precision to 23 digits                                                    FLOAT
+    |
+    |DOUBLE                  Decimal number - with 24 to 53 digits                                                           DOUBLE
+    |
+    |BOOLEAN                 Boolean value 0 to 1                                                                            BOOLEAN
+    |
+    |DATE                    date in format of YYY-MM-DD ranging from 1000-01-01 to 9999-12-31                               DATE
+    |
+    |YEAR                    year in 4 digits format ranging from 1901 to 2155                                               YEAR
+    |
+    |UNSIGNED               With this all the negative value will be added to positive and range                             UNSIGNED
+                            is increased of that data type.
+    -----------------------------------------------------------------------------------------------------------------------------------
+
+Constraints -   Rules for data in the table.
+
+    *   NOT NULL    -   columns cannot have a null value
+
+            Name VARCHAR(30) NOT NULL;
+
+    *   UNIQUE      -   all values in column are different
+
+            Email VARCHAR(50) UNIQUE;
+
+    *   DEFAULT     -   sets the default value of a column
+
+            Followers INT DEFAULT 0;
+
+    *   CHECK       -   it can limit the values allowed in a column
+
+            Age INT;
+            CONSTRAINT age_check CHECK (Age >= 13);
+
+    *   PRIMARY KEY -   makes a column unique & not null but used only for one
+
+            CREATE TABLE temp (
+                id INT NOT NULL,
+                PRIMARY KEY (id)
+            );
+
+    *   FOREIGN KEY -   prevent actions that would destroy links between tables
+                        It is used when we want to link info from another table to this table
+
+            CREATE TABLE temp (
+                cust_id INT,
+                FOREIGN KEY (cust_id) references customer(id)
+            );
+
+    *   DISTINCT    -   use in SELECT command to show all the unique column in table, if we have two column of samne age than it will not show us the age for two times it will only show the age one time only.
+
+ER Diagram  -   Visualizing a table in diagram form, We can visualize out tables using (ctrl + R), These tables we called Relations.
+
+What are Keys ? 
+
+    Keys are special columns in the table.
+
+    *   Primary Key -   It is a column(or set of columns) in a table that uniquely identifies each row(a unique id)
+                        There is only 1 PK & it should be NOT null.
+
+    *   Foreign Key -   A foreign key is a column(or set of columns) in a table that refers to the primary key in another table.
+                        FKs can have duplicate & null values.
+                        There can be multiple FKs.
+
+Select Command  -   Selects & Show data from the DB
+
+    Syntax  -   SELECT col1, col2 FROM table_name;
+
+    Syntax(to show all) -   SELECT * FROM table_name;
