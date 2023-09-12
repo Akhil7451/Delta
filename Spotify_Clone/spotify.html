@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify - Web Player: Music for everyone</title>
+    <link rel="stylesheet" href="spotify.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="./assets/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="main">
+
+        <!-- ----------------------SIDEBAR---------------------- -->
+        <div class="sidebar">
+
+            <!-- navigation -->
+            <div class="nav">               
+                <div class="nav-option" style="opacity: 1;">            <!-- inline style is applied because opacity of home remains same in case oh hover -->
+                    <i class="fa-solid fa-house"></i>                   <!-- home-icon -->
+                    <a href="#">Home</a>
+                </div>
+                <div class="nav-option">
+                    <i class="fa-solid fa-magnifying-glass"></i>        <!-- search-icon -->
+                    <a href="#">Search</a>
+                </div>
+            </div>
+
+            <!-- library -->
+            <div class="library">
+                <div class="options">
+                    <div class="library-option nav-option">             <!-- added another class nav-option, to give same properties to library-option -->
+                        <img src="./assets/library_icon.png">           <!-- library-icon -->
+                        <a href="#">Your Library</a>
+                    </div>
+                    <div class="icons">
+                        <i class="fa-solid fa-plus"></i>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="library-boxes">
+                    <div class="box">
+                        <p class="box-p1">Create your first playlist</p>
+                        <p class="box-p2">It's easy, we'll help you</p>
+                        <button class="badge">Create playlist</button>
+                    </div>
+                    <div class="box two">
+                            <p class="box-p1">Let's find some podcasts to follow</p>
+                            <p class="box-p2">We'll keep you updated on new episodes</p>
+                        <button class="badge">Browse podcasts</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ----------------------MAIN CONTENT---------------------- -->
+        <div class="main-content">
+            <div class="sticky-nav">
+                <div class="sticky-nav-icons">
+                    <img src="./assets/backward_icon.png">
+                    <img src="./assets/forward_icon.png" class="hide">
+                </div>
+                <div class="sticky-nav-options">
+                    <button class="badge nav-item hide">Explore Premium</button>
+                    <button class="badge nav-item dark-badge"><i class="fa-sharp fa-regular fa-circle-down" style="margin-right: 5px;"></i>Install App</button>
+                    <i class="fa-regular fa-user nav-item" ></i>
+                </div>
+            </div>
+
+            <h2>Recently Played</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <img src="./assets/card1img.jpeg" alt="card-1" class="card-img">
+                    <p class="card-title">Top 50 - Global</p>
+                    <p class="card-info">Your daily updates of the most tracks...</p>
+                </div>
+
+                <div class="card">
+                    <img src="./assets/imaan.jfif" alt="card-1" class="card-img">
+                    <p class="card-title">Top Songs - Imraan Hashmi</p>
+                    <p class="card-info">Feel the romance...</p>
+                </div>
+
+                <div class="card">
+                    <img src="./assets/coding.jfif" alt="card-1" class="card-img">
+                    <p class="card-title">Top Songs - Coding</p>
+                    <p class="card-info">Focus mode on...</p>
+                </div>
+
+                <div class="card">
+                    <img src="./assets/pujabi.jfif" alt="card-1" class="card-img">
+                    <p class="card-title">Punjabi Pump</p>
+                    <p class="card-info">Feel the swag...</p>
+                </div>
+            </div>
+
+            <h2>Trending now near you</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <img src="./assets/card2img.jpeg" alt="card-2" class="card-img">
+                    <p class="card-title">Mahiya Jinna Sohna</p>
+                    <p class="card-info">Darshan Raval</p>
+                </div>
+
+                <div class="card">
+                    <img src="./assets/weekend.jpg" alt="card-2" class="card-img">
+                    <p class="card-title">Bliding Lights</p>
+                    <p class="card-info">Weekend</p>
+                </div>
+
+                <div class="card">
+                    <img src="./assets/attention.jpg" alt="card-2" class="card-img">
+                    <p class="card-title">Attention</p>
+                    <p class="card-info">Charlie Puth</p>
+                </div>
+
+
+                <div class="card">
+                    <img src="./assets/card3img.jpeg" alt="card-3" class="card-img">
+                    <p class="card-title">Mere Pass Tum Ho</p>
+                    <p class="card-info">Rahat Fateh Ali Khan</p>
+                </div>
+
+                <div class="card">
+                    <img src="./assets/card4img.jpeg" alt="card-4" class="card-img">
+                    <p class="card-title">Naa Ready (From "Leo")</p>
+                    <p class="card-info">Anirudh Ravichander, Thalapathy Vijay, Asal..</p>
+                </div>
+            </div>
+
+            <h2>Featured Charts</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <img src="./assets/card5img.jpeg" alt="card-1" class="card-img">
+                    <p class="card-title">Top Songs - Global</p>
+                    <p class="card-info">Your weekly updates of the most tracks right...</p>
+                </div>
+
+                <div class="card">
+                    <img src="./assets/card6img.jpeg" alt="card-1" class="card-img">
+                    <p class="card-title">Top Songs - India</p>
+                    <p class="card-info">Your weekly updates of the most tracks right...</p>
+                </div>
+
+                <div class="card">
+                    <img src="./assets/img12card.jfif" alt="card-1" class="card-img">
+                    <p class="card-title">Top 50 - Global</p>
+                    <p class="card-info">Your daily updates of the most tracks...</p>
+                </div>
+
+                <div class="card">
+                    <img src="./assets/card10img.jfif" alt="card-1" class="card-img">
+                    <p class="card-title">Top 50 - India</p>
+                    <p class="card-info">Your daily updates of the most tracks...</p>
+                </div>
+
+                <div class="card">
+                    <img src="./assets/img11card.jpg" alt="card-1" class="card-img">
+                    <p class="card-title">Top 50 - Viral</p>
+                    <p class="card-info">Your daily updates of the most viral tracks...</p>
+                </div>
+            </div>
+
+            <h2>International Hits</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <img src="./assets/usa.jpg" alt="card-1" class="card-img">
+                    <p class="card-title">Top 50 - USA</p>
+                    <p class="card-info">Your weekly updates of the most tracks right...</p>
+                </div>
+
+                <div class="card">
+                    <img src="./assets/ukl.jpg" alt="card-1" class="card-img">
+                    <p class="card-title">Top 50 - UK</p>
+                    <p class="card-info">Your weekly updates of the most tracks right...</p>
+                </div>
+
+                <div class="card">
+                    <img src="./assets/italy.jpg" alt="card-1" class="card-img">
+                    <p class="card-title">Top 50 - Italy</p>
+                    <p class="card-info">Your daily updates of the most tracks...</p>
+                </div>
+
+                <div class="card">
+                    <img src="./assets/france.jpg" alt="card-1" class="card-img">
+                    <p class="card-title">Top 50 - France</p>
+                    <p class="card-info">Your daily updates of the most tracks...</p>
+                </div>
+
+                <div class="card">
+                    <img src="./assets/brazil.jpg" alt="card-1" class="card-img">
+                    <p class="card-title">Top 50 - Brazil</p>
+                    <p class="card-info">Your daily updates of the most viral tracks...</p>
+                </div>
+            </div>
+
+            <div class="footer">
+                <div class="line"></div>
+            </div>
+
+        </div>
+        <!-- ----------------------MUSIC PLAYER---------------------- -->
+        <div class="music-player">
+            <div class="album">
+                <div class="album-pic">
+                    <img src="./assets/card4img.jpeg">
+                </div>
+                <div class="album-name">
+                    <a href="#" class="song">Naa Ready(From "Leo")</a>
+                    <a href="#" class="singer">Anirudh Ravichander...</a>
+                </div>
+                <div class="album-icons">
+                    <img src="./assets/album_icon1.png" class="heart">
+                    <img src="./assets/album_icon2.png" class="pic-in-pic">
+                </div>
+            </div>
+
+            <div class="player">
+                <div class="player-controls">
+                    <img src="./assets/player_icon1.png" class="player-control-icons">
+                    <img src="./assets/player_icon2.png" class="player-control-icons">
+                    <img src="./assets/player_icon3.png" class="player-control-icons" style="opacity: 1; height: 2rem;">
+                    <img src="./assets/player_icon4.png" class="player-control-icons">
+                    <img src="./assets/player_icon5.png" class="player-control-icons">
+                </div>
+
+                <div class="playback-bar">
+                    <span class="curr-time">00:00</span>
+                    <input type="range" min="0" max="100" step="1" class="progress-bar">
+                    <span class="tot-time">03:33</span>
+                </div>
+            </div>
+
+            <div class="controls">
+                <img src="./assets/controls_icon1.png" class="icon-1">
+                <img src="./assets/controls_icon2.png" class="icon-2">
+                <img src="./assets/controls_icon3.png" class="icon-3">
+                <img src="./assets/controls_icon4.png" class="icon-4">
+                <img src="./assets/controls_icon5.png" class="icon-5">
+                <input type="range" min="0" max="100" step="1" value="6" class="vol-bar">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

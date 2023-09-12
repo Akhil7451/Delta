@@ -1,0 +1,392 @@
+body {
+    font-family: 'Montserrat', sans-serif;  /* Google Fonts */
+    margin: 0rem;
+    background-color: black;
+    color: white;
+
+    /* overflow is used to set the desired behavior when content not fits in our parent element box.
+    In this case, if we want it to be scrollable we must use (overflow: scroll;)
+
+    If we want to hide our extra content we will be using (overflow: hidden;) */
+    overflow: hidden;
+}
+
+.main {
+    display: flex;
+    height: 100vh;
+    padding: 0.5rem;
+}
+
+.sidebar {
+    background-color: black;
+    width: 340px;
+    border-radius: 1rem;                    /* 1rem = 16px */
+    margin-right: 0.5rem;
+    overflow: auto;
+}
+
+.main-content {
+    background-color: #121212;
+    flex: 1;                                /* flex: 1; is used to give all the eextra space to main-content */
+    border-radius: 1rem;                    /* 1rem = 16px */
+    overflow: auto;                         /* scroll bar is added but will see only if needed */
+    padding: 0 1.5rem 0 1.5rem;
+}
+
+.music-player {
+    background-color: black;
+    position: fixed;
+    bottom: 0px;
+    height: 72px;
+    width: 100%;
+}
+
+            /* --------------------SIDEBAR (NAVIGATION)-------------------- */
+
+.nav {
+    height: 100px;
+    padding: 0.5rem 0.75rem;
+    background-color: #121212;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.nav-option {
+    line-height: 40px;
+    opacity: 0.7;
+    padding: 0.5rem 0.75rem;
+}
+
+.nav-option:hover {
+    opacity: 1;
+}
+
+.nav-option i {
+    font-size: 1.25rem;
+}
+
+.nav-option a {
+    font-size: 1rem;
+    margin-left: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+            /* ----------------------SIDEBAR (LIBRARY)---------------------- */
+
+.library {
+    background-color: #121212;
+    border-radius: 1rem;
+    height: 100%;
+    margin-top: 0.5rem;
+    padding: 0.5rem 0.75rem;
+}
+
+.library-option img {
+    height: 1.25rem;
+    width: 1.25rem;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icons {
+    font-size: 1.25rem;
+    display: flex;
+}
+
+.icons i {
+    opacity: 0.7;
+    margin-right: 1rem;
+}
+
+.icons i:hover {
+    opacity: 1;
+}
+
+.box {
+    height: 8rem;
+    background-color: #232323;
+    border-radius: 0.75rem;
+    margin: 0.75rem 0 1.75rem 0;
+    padding: 0.75rem 1rem;
+}
+
+.two {
+    height: 10rem;
+}
+
+.box-p1 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.box-p2 {
+    font-size: 0.85rem;
+    opacity: 0.85;
+}
+
+.badge {
+    background-color: white;
+    border: none;
+    border-radius: 100px;
+    padding: 0.25rem 1rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+    height: 2rem;
+    width: fit-content;
+}
+
+            /* ----------------------MAIN CONTENT---------------------- */
+
+.sticky-nav {
+    position: sticky;
+    top: 0;
+    background-color: #121212;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0 1rem 0;
+    z-index: 10;
+}
+
+.sticky-nav-icons img {
+    margin-left: 0.75rem;
+}
+
+.sticky-nav-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-item {
+    margin-right: 1rem;
+}
+
+.dark-badge {
+    background-color: black;
+    color: white;
+}
+
+@media (max-width: 1024px) {
+    .hide {
+        display: none;
+    }
+}
+
+.card{
+    background-color: #232323;
+    width: 150px;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-left: 1.5rem;
+    margin-top: 1.2rem;
+}
+
+.cards-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card-img{
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+.card-title{
+    font-weight: 600;
+}
+
+.card-info{
+    font-size: 0.90rem;
+    opacity: 0.8;
+}
+
+.footer{
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.line{
+    width: 90%;
+    height: 40%;
+    border-top:  1px solid white;
+    opacity: 0.4;
+}
+
+
+            /* ----------------------MUSIC PLAYER---------------------- */
+
+.music-player {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.album {
+    width: 25%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.album-pic {
+    height: 54px;
+    width: 54px;
+    margin-left: 8px;   
+}
+
+.album-pic img {
+    height: 100%;
+    width: 100%;
+    border-radius: 3.4px;
+}
+
+.album-name {
+    display: flex;
+    flex-direction: column;
+    margin-left: 18px;
+}
+
+.song {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.singer {
+    font-size: 11px;
+    opacity: 0.7;
+}
+
+.heart {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 5.5px;
+}
+
+.pic-in-pic {
+    height: 30px;
+    width: 30px;
+    margin: 8px 0 0 7px;
+}
+
+.player {
+    width: 50%;
+}
+
+.player-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-control-icons {
+    height: 1rem;
+    margin-right: 1.75rem;
+    opacity: 0.7;
+}
+
+.player-control-icons:hover {
+    opacity: 1;
+}
+
+.playback-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress-bar {
+    width: 70%;
+    appearance: none;                       /* To remove default styling */
+    background-color: transparent;
+    cursor: pointer;    
+}
+
+.progress-bar::-webkit-slider-runnable-track {
+    background-color: #ddd;
+    border-radius: 100px;
+    height: 0.2rem;
+}
+
+.progress-bar::-webkit-slider-thumb {
+    appearance: none;
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    background-color: #1bd760;
+    margin-top: -6px;
+}
+
+.controls {
+    width: 25%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-right: 19px;
+}
+
+.icon-1 {
+    height: 34px;
+    width: 23px;
+    margin-left: 6px;
+}
+
+.icon-2 {
+    height: 36px;
+    width: 23px;
+    margin-left: 8px;
+}
+
+.icon-3 {
+    height:20px ;
+    width:18px;
+    margin-left: 8px;
+}
+.icon-4 {
+    height: 16px;
+    width: 16px;
+    margin-left: 9.6px;
+}
+.icon-5 {
+    height: 35px;
+    width: 26px;
+    margin-left: 7.5px;
+}
+
+.vol-bar {
+    margin-left: 7px;
+    margin-right: 7px;
+    width:100px;
+    
+    appearance: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.vol-bar::-webkit-slider-runnable-track {
+    background-color: #ddd;
+    border-radius: 100px;
+    height: 0.2rem;
+}
+
+.vol-bar::-webkit-slider-thumb {
+    appearance: none;
+    height: 1rem;
+    width:1rem;
+    background-color: #1bd760;
+    border-radius: 50%;
+    margin-top:-6px;
+}
