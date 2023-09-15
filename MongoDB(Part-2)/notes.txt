@@ -1,0 +1,277 @@
+Mongoose    -   A library that creates a connection between MongoDB & Node.js JavaScript Runtime Environment.
+                It is an ODM(Object Data Modeling) Library.
+
+    Installation    -   npm i mongoose
+    
+    Getting started with - Firts start mongodb in cmd than set up your connection.
+
+        const mongoose = require('mongoose');
+
+        //to execute main function.
+        main()
+            .then((res) => {
+                console.log("connection successful");
+            })
+            .catch(err => console.log(err));
+
+        async function main() {
+            await mongoose.connect("mongodb://127.0.0.1:27017/test"); //for connection to our database.
+        }
+
+    Schema  -   Schema defines the shape of the documents within that collection.
+
+        const userSchema = new mongosse.Schema({
+            name: String,
+            email: String,
+            age: Number
+        });
+
+    Models  -   Model in mongoose is a class with which we construct documents.
+
+        const User = mongoose.model("User", userSchema);
+
+    INSERT  -   Inserting data to DB.
+                For every instance which we had created there is by default method (save()) to save the data inside database.
+
+        Inserting One.
+
+                const User = mongoose.model("User", userSchema);
+
+                const user1 = new User({
+                    name: "Adam",
+                    email: "adam@yahoo.in",
+                    age: 48
+                });
+
+                const user2 = new User({
+                    name: "Eve",
+                    email: "eve@yahoo.in",
+                    age: 48
+                });
+
+                user1
+                    .save()   //saving data to database
+                    .then((res) => {
+                        console.log(res);
+                    })
+                    .catch((err) => {
+                        console.log(err)
+                    });
+                        
+        Inseting Multiple
+
+                User.insertMany([
+                    {name: "Tony", email: "tony@gmail.com", age: 50},
+                    {name:"Peter", email:"peter@gmail.com", age: 30},
+                    {name:"Bruce", email:"bruce@gmail.com", age: 47}
+                ]).then((res) => {
+                    console.log(res);
+                });
+
+        Note    -   Mongoose uses Operation Buffering.
+                    Mongoose lets you start using your models immi=ediately, without
+                    waiting for mongoose to establish a connection to MongoDB.
+
+    FIND    -   Model.find()    //return a Query Object(thennable)
+                Mongoose Queries are not promises. But they hace a .then()
+
+        //To find All Data
+
+            User.find({}).then((res) => {
+                console.log(res);
+            }).catch((err) => {
+                console.log(err);
+            });
+
+        //To find Specific Data
+
+            User.find({age: {$lt: 50}}).then((res) => {
+                console.log(res);
+            }).catch((err) => {
+                console.log(err);
+            });
+
+        //to find value of specific data
+
+            User.find({age: {$lt: 50}}).then((res) => {
+                console.log(res[0].name);
+            }).catch((err) => {
+                console.log(err);
+            });
+
+        //Find data by ID
+
+            User.findById("65028a270663e13f64870173").then((res) => {
+                console.log(res);
+            }).catch((err) => {
+                console.log(err);
+            });
+
+    UPDATE  -   Updation of data
+
+        *   Model.updateOne()
+
+                User.updateOne({name: "Bruce"}, {age: 49}).then((res) => {
+                    console.log(res);
+                }).catch((err) => {
+                    console.log(err);
+                });
+
+        *   Model.updateMany()
+
+                User.updateMany({age: {$gt: 48}}, {age: 49})
+                .then((res) => {
+                    console.log(res);
+                }).catch((err) => {
+                    console.log(err);
+                });
+
+        *   Model.findOneAndUpdate()    -   we added a option {new: true} because when we use this method new's value is false by default.
+                                            it will give the result of old data to see the updated data we pass the new option as true
+
+                User.findOneAndUpdate({name: "Bruce"}, {age: 35}, {new: true})
+                .then((res) => {
+                    console.log(res);
+                }).catch((err) => {
+                    console.log(err);
+                });
+
+    DELETE  -   Delete the data from database.
+
+        *   Model.deleteOne()
+
+                User.deleteOne({name: "Bruce"})
+                    .then((res) => {
+                        console.log(res);
+                    }).catch((err) => {
+                        console.log(err);
+                    });
+
+        *   Model.deleteMany()
+
+                User.deleteMany({age: 48})
+                    .then((res) => {
+                        console.log(res);
+                    }).catch((err) => {
+                        console.log(err);
+                    });
+
+        *   Model.findByIdAndDelete()
+
+                User.findByIdAndDelete("65028a270663e13f64870171")
+                    .then((res) => {
+                        console.log(res);
+                    }).catch((err) => {
+                        console.log(err);
+                    });
+
+        *   Model.findOneAndDelete()
+
+                User.findOneAndDelete({name: "Peter"})
+                    .then((res) => {
+                        console.log(res);
+                    }).catch((err) => {
+                        console.log(err);
+                    });
+
+    Schema Validations  -   Basically, Rules for Schema.
+                            Learn about schema types from mongoose.js   (https://mongoosejs.com/docs/schematypes.html).
+
+        Schema Types    -   
+
+            All Schema Types
+            
+                required    : boolean or function, if true adds a required validator for this property
+                default     : Any or function, sets a default value for the path. If the value is a function, the return value of the function is used as the default.
+                select      : boolean, specifies default projections for queries
+                validate    : function, adds a validator function for this property
+                get         : function, defines a custom getter for this property using Object.defineProperty().
+                set         : function, defines a custom setter for this property using Object.defineProperty().
+                alias       : string, mongoose >= 4.10.0 only. Defines a virtual with the given name that gets/sets this path.
+                immutable   : boolean, defines path as immutable. Mongoose prevents you from changing immutable paths unless the parent document has isNew: true.
+                transform   : function, Mongoose calls this function when you call Document#toJSON() function, including when you JSON.stringify() a document.
+
+                Indexes -   You can also define MongoDB indexes using schema type options.
+
+                    index   : boolean, whether to define an index on this property.
+                    unique  : boolean, whether to define a unique index on this property.
+                    sparse  : boolean, whether to define a sparse index on this property.
+
+                String
+
+                    lowercase   : boolean, whether to always call .toLowerCase() on the value
+                    uppercase   : boolean, whether to always call .toUpperCase() on the value
+                    trim        : boolean, whether to always call .trim() on the value
+                    match       : RegExp, creates a validator that checks if the value matches the given regular expression
+                    enum        : Array, creates a validator that checks if the value is in the given array.
+                    minLength   : Number, creates a validator that checks if the value length is not less than the given number
+                    maxLength   : Number, creates a validator that checks if the value length is not greater than the given number
+                    populate    : Object, sets default populate options
+
+                Number
+
+                    min         : Number, creates a validator that checks if the value is greater than or equal to the given minimum.
+                    max         : Number, creates a validator that checks if the value is less than or equal to the given maximum.
+                    enum        : Array, creates a validator that checks if the value is strictly equal to one of the values in the given array.
+                    populate    : Object, sets default populate options
+
+                Date
+
+                    min         : Date, creates a validator that checks if the value is greater than or equal to the given minimum.
+                    max         : Date, creates a validator that checks if the value is less than or equal to the given maximum.
+                    expires     : Number or String, creates a TTL index with the value expressed in seconds.
+
+                ObjectId
+
+                    populate    : Object, sets default populate options
+
+        Get started -   
+
+            const bookSchema = mongoose.Schema({
+                title: {
+                    type: String,
+                    required: true
+                },
+                author: {
+                    type: String
+                },
+                price: {
+                    type: Number
+                }
+            });
+
+            const Book = mongoose.model("Book", bookSchema);
+
+            let book1 = new Book({
+                title: "Mathematics XII",
+                author: "RD Sharma",
+                price: 1200
+            });
+
+    Schema Validations with UPDATE  -   
+
+        Validaters are not working while updation, so if we want to apply valdators 
+        while updation also we have to use {runValidators: true} in updation line.
+
+            Book.findByIdAndUpdate("6503c201afa49f04e0583ec6", {price: 700}, {runValidators: true})
+                .then((res) => {
+                    console.log(res);
+                }).catch((err) => {
+                    console.log(err);
+                });
+
+        Handling Error  -   to customize the error according to our requirement.
+                            (console.log(err.errors.category.properties.message);)
+            price: {
+                type: Number,
+                min: [1, "Price is too low for selling."]       //customizing the error
+            },
+
+            //to print the custom error message on error.
+            
+            Book.findByIdAndUpdate("6503c201afa49f04e0583ec6", {price: -700}, {runValidators: true})
+                .then((res) => {
+                    console.log(res);
+                }).catch((err) => {
+                    console.log(err.errors.price.properties.message);
+                });

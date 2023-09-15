@@ -1,0 +1,164 @@
+MongoDB -   MongoDB is an open-source document-oriented database that is designed to store a large scale of data
+            and also allows you to work with that data very efficiently. It is categorized under the NoSQL (Not only SQL)
+            database because the storage and retrieval of data in the MongoDB are not in the form of tables.
+
+    The Shell   -   The mongo shell is an interactive JavaScript interface to MongoDB. You can use the mongo shell to query
+                    and update data as well as perform administrative operations.
+
+        *   mongos      //to start
+
+        *   help        //to get all the commands.
+
+        *   use         //Set current database
+
+        *   show    -
+
+                'show databases'/'show dbs':        Print a list of all available databases.
+
+                'show collections'/'show tables':   Print a list of all collections for current database.
+
+                'show profile':                     Prints system.profile information.
+
+                'show users':                       Print a list of all users for current database.
+
+                'show roles':                       Print a list of all roles for current database.
+
+                'show log <type>':                  log for current connection, if type is not set uses 'global'
+
+                'show logs':                        Print all logs.
+
+        *   exit                        //Quit the MongoDB shell with exit/exit()/.exit
+
+        *   quit                        //Quit the MongoDB shell with quit/quit()
+
+        *   Mongo                       //Create a new connection and return the Mongo object. Usage: new Mongo(URI, options [optional])
+
+        *   connect                     //Create a new connection and return the Database object. Usage: connect(URI, username [optional], password [optional])
+
+        *   it                          //result of the last line evaluated; use to further iterate
+
+        *   version                     //Shell version
+
+        *   load                        //Loads and runs a JavaScript file into the current shell environment
+
+        *   enableTelemetry             //Enables collection of anonymous usage data to improve the mongosh CLI
+
+        *   disableTelemetry            //Disables collection of anonymous usage data to improve the mongosh CLI
+
+        *   passwordPrompt              //Prompts the user for a password
+
+        *   sleep                       //Sleep for the specified number of milliseconds
+
+        *   print                       //Prints the contents of an object to the output
+
+        *   printjson                   //Alias for print()
+
+        *   convertShardKeyToHashed     //Returns the hashed value for the input using the same hashing function as a hashed index.
+
+        *   cls                         //Clears the screen like console.clear()
+
+        *   isInteractive               //Returns whether the shell will enter or has entered interactive mode
+
+    Starting with mongoDB
+        
+        use database_name       //to create a new database and to add this in our database we have to insert data.
+
+        Data Storing    -       
+
+                BSON Data       -       MongoDB change the json type of data binary JSON and store in databases.
+                
+                Collections     -       There are a collection in mongoDB
+
+                        Document        -       Mongo stores data in form of documents(BSON docs)
+                        Collection      -       MongoDB stores documents in collections.
+
+        INSERT in DB    -       Inserting data in DB.
+
+                *       show collections        //to check the collections in db
+                *       db.student.insertOne({name: "adam", marks: 79}) //insert one data
+
+                If a collection does not exist, MongoDB creates the collection when you first store data of that collection.
+
+                *       db.student.insertMany([{d1}, {d2}, {d3}])       //insert many data.
+
+        FIND in DB      -       Reading data
+
+                *       db.student.find()       //to find the data
+                
+                for specific queries    
+
+                *       db.collection.find({key: value})        //find all the data with given key: values. Return cursor.
+                *       db.collection.findOne({key: value})     //find single data with given key: value. Return actual document.
+                
+                Query Operator  - 
+
+                        Name                    Description
+                                COMPARISON
+
+                        $eq     -       Matches values that are equal to a specified value.
+                        $gt     -       Matches values that are greater than a specified value.
+                        $gte    -       Matches values that are greater than or equal to a specified value.
+                        $in     -       Matches any of the values specified in an array.
+                        $lt     -       Matches values that are less than a specified value.
+                        $lte    -       Matches values that are less than or equal to a specified value.
+                        $ne     -       Matches all values that are not equal to a specified value.
+                        $nin    -       Matches none of the values specified in an array.
+
+                                LOGICAL
+
+                        $and    -       oins query clauses with a logical AND returns all documents that match the conditions of both clauses.
+                        $not    -       nverts the effect of a query expression and returns documents that do not match the query expression.
+                        $nor    -       oins query clauses with a logical NOR returns all documents that fail to match both clauses.
+                        $or     -       oins query clauses with a logical OR returns all documents that match the conditions of either clause.
+
+                                ELEMENT
+
+                        $exists -       Matches documents that have the specified field.
+                        $type   -       Selects documents if a field is of the specified type.
+
+                                MISCELLANEOUS
+                        
+                        $comment        -       Adds a comment to a query predicate.
+                        $rand   -       Generates a random float between 0 and 1.
+
+                        -       db.student.find({marks: {$gt: 75}})                             //return the data where marks > 75
+                        -       db.student.find({city: {$in: ["Delhi, "Mumbai]}})               //return data who live in Delhi or Mumbai
+                        -       db.student.find({$or: [marks: {$gt: 75}, {city: "Delhi"}]})     //return data who live in Delhi or have marks > 75.
+
+        UPDATE in DB    -       Update data in DB
+
+                $addFields      -       Adds new fields to documents.
+                                        { $addFields: { <newField>: <expression>, ... } }
+
+                $set            -       Adds new fields to documents. $set outputs documents that contain all existing fields from the input documents and newly added fields.
+                                        { $set: { <newField>: <expression>, ... } }
+
+                $project
+
+                $unset          -       Removes/excludes fields from documents.
+                                        { $unset: "<field>" }
+
+
+                $replaceRoot    -       Replaces the input document with the specified document. The operation replaces all existing fields in the input document, including the _id field.
+                                        { $replaceRoot: { newRoot: <replacementDocument> } }
+
+                $replaceWith    -       Replaces the input document with the specified document. The operation replaces all existing fields in the input document, including the _id field. 
+                                        { $replaceWith: <replacementDocument> }
+
+
+                db.collection.updateOne(<filter>, <update>, <options>)
+
+                *       db.student.updateOne({name: "adam"}, {$set: {marks:99}})
+
+        Nesting -       
+
+                db.student.insertOne({name: "abc", performance: {marks: 88, grade: "A"}})
+                db.student.find({"performance.marks": 88})
+
+        DELETE in DB    -       Delete document from db.
+
+                db.collection.deleteOne(<filter>, <options>)
+
+                db.student.deleteMany({})       //delete all data
+
+                db.dropDatabase()               //delete database
